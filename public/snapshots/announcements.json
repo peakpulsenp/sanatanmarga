@@ -1,0 +1,757 @@
+{
+  "version": "5.0.0",
+  "generatedAt": "2026-10-24T06:06:12.733Z",
+  "items": [
+    {
+      "id": "notif_1792821972733_vt6vpz",
+      "title": "Public Announcement",
+      "body": "Platform update",
+      "entityType": "system_announcement",
+      "entityId": "ann-1",
+      "canonicalUrl": "/announcements/ann-1",
+      "priority": "normal",
+      "visibility": "public_announcement",
+      "channels": [
+        "in_app"
+      ],
+      "isPublicAnnouncement": true,
+      "isRead": false,
+      "createdAt": "2026-10-24T06:06:12.733Z",
+      "updatedAt": "2026-10-24T06:06:12.733Z"
+    },
+    {
+      "id": "notif_1791871597933_crjffx",
+      "title": "Public Announcement",
+      "body": "Platform update",
+      "entityType": "system_announcement",
+      "entityId": "ann-1",
+      "canonicalUrl": "/announcements/ann-1",
+      "priority": "normal",
+      "visibility": "public_announcement",
+      "channels": [
+        "in_app"
+      ],
+      "isPublicAnnouncement": true,
+      "isRead": false,
+      "createdAt": "2026-10-13T06:06:37.933Z",
+      "updatedAt": "2026-10-13T06:06:37.933Z"
+    },
+    {
+      "id": "notif_1791776525636_qypbim",
+      "title": "Public Announcement",
+      "body": "Platform update",
+      "entityType": "system_announcement",
+      "entityId": "ann-1",
+      "canonicalUrl": "/announcements/ann-1",
+      "priority": "normal",
+      "visibility": "public_announcement",
+      "channels": [
+        "in_app"
+      ],
+      "isPublicAnnouncement": true,
+      "isRead": false,
+      "createdAt": "2026-10-12T03:42:05.636Z",
+      "updatedAt": "2026-10-12T03:42:05.636Z"
+    },
+    {
+      "id": "notif_1791534104099_7zw9g4",
+      "title": "Public Announcement",
+      "body": "Platform update",
+      "entityType": "system_announcement",
+      "entityId": "ann-1",
+      "canonicalUrl": "/announcements/ann-1",
+      "priority": "normal",
+      "visibility": "public_announcement",
+      "channels": [
+        "in_app"
+      ],
+      "isPublicAnnouncement": true,
+      "isRead": false,
+      "createdAt": "2026-10-09T08:21:44.099Z",
+      "updatedAt": "2026-10-09T08:21:44.099Z"
+    },
+    {
+      "id": "notif_1791531484403_jq9kl5",
+      "title": "Public Announcement",
+      "body": "Platform update",
+      "entityType": "system_announcement",
+      "entityId": "ann-1",
+      "canonicalUrl": "/announcements/ann-1",
+      "priority": "normal",
+      "visibility": "public_announcement",
+      "channels": [
+        "in_app"
+      ],
+      "isPublicAnnouncement": true,
+      "isRead": false,
+      "createdAt": "2026-10-09T07:38:04.403Z",
+      "updatedAt": "2026-10-09T07:38:04.403Z"
+    },
+    {
+      "id": "notif_1791530692506_dlsb5t",
+      "title": "Public Announcement",
+      "body": "Platform update",
+      "entityType": "system_announcement",
+      "entityId": "ann-1",
+      "canonicalUrl": "/announcements/ann-1",
+      "priority": "normal",
+      "visibility": "public_announcement",
+      "channels": [
+        "in_app"
+      ],
+      "isPublicAnnouncement": true,
+      "isRead": false,
+      "createdAt": "2026-10-09T07:24:52.506Z",
+      "updatedAt": "2026-10-09T07:24:52.506Z"
+    },
+    {
+      "id": "notif_1791470339681_us0f87",
+      "title": "Public Announcement",
+      "body": "Platform update",
+      "entityType": "system_announcement",
+      "entityId": "ann-1",
+      "canonicalUrl": "/announcements/ann-1",
+      "priority": "normal",
+      "visibility": "public_announcement",
+      "channels": [
+        "in_app"
+      ],
+      "isPublicAnnouncement": true,
+      "isRead": false,
+      "createdAt": "2026-10-08T14:38:59.681Z",
+      "updatedAt": "2026-10-08T14:38:59.681Z"
+    },
+    {
+      "id": "notif_1791470035038_ddx3fe",
+      "title": "Public Announcement",
+      "body": "Platform update",
+      "entityType": "system_announcement",
+      "entityId": "ann-1",
+      "canonicalUrl": "/announcements/ann-1",
+      "priority": "normal",
+      "visibility": "public_announcement",
+      "channels": [
+        "in_app"
+      ],
+      "isPublicAnnouncement": true,
+      "isRead": false,
+      "createdAt": "2026-10-08T14:33:55.038Z",
+      "updatedAt": "2026-10-08T14:33:55.038Z"
+    },
+    {
+      "id": "notif_1791438933663_zrj9kx",
+      "title": "Public Announcement",
+      "body": "Platform update",
+      "entityType": "system_announcement",
+      "entityId": "ann-1",
+      "canonicalUrl": "/announcements/ann-1",
+      "priority": "normal",
+      "visibility": "public_announcement",
+      "channels": [
+        "in_app"
+      ],
+      "isPublicAnnouncement": true,
+      "isRead": false,
+      "createdAt": "2026-10-08T05:55:33.665Z",
+      "updatedAt": "2026-10-08T05:55:33.665Z"
+    },
+    {
+      "id": "notif_1791438439552_2lidop",
+      "title": "Public Announcement",
+      "body": "Platform update",
+      "entityType": "system_announcement",
+      "entityId": "ann-1",
+      "canonicalUrl": "/announcements/ann-1",
+      "priority": "normal",
+      "visibility": "public_announcement",
+      "channels": [
+        "in_app"
+      ],
+      "isPublicAnnouncement": true,
+      "isRead": false,
+      "createdAt": "2026-10-08T05:47:19.552Z",
+      "updatedAt": "2026-10-08T05:47:19.552Z"
+    },
+    {
+      "id": "notif_1791437094342_rd87gr",
+      "title": "Public Announcement",
+      "body": "Platform update",
+      "entityType": "system_announcement",
+      "entityId": "ann-1",
+      "canonicalUrl": "/announcements/ann-1",
+      "priority": "normal",
+      "visibility": "public_announcement",
+      "channels": [
+        "in_app"
+      ],
+      "isPublicAnnouncement": true,
+      "isRead": false,
+      "createdAt": "2026-10-08T05:24:54.342Z",
+      "updatedAt": "2026-10-08T05:24:54.342Z"
+    },
+    {
+      "id": "notif_1791109291947_7zld5d",
+      "title": "Public Announcement",
+      "body": "Platform update",
+      "entityType": "system_announcement",
+      "entityId": "ann-1",
+      "canonicalUrl": "/announcements/ann-1",
+      "priority": "normal",
+      "visibility": "public_announcement",
+      "channels": [
+        "in_app"
+      ],
+      "isPublicAnnouncement": true,
+      "isRead": false,
+      "createdAt": "2026-10-04T10:21:31.947Z",
+      "updatedAt": "2026-10-04T10:21:31.947Z"
+    },
+    {
+      "id": "notif_1791109092262_a67ebk",
+      "title": "Public Announcement",
+      "body": "Platform update",
+      "entityType": "system_announcement",
+      "entityId": "ann-1",
+      "canonicalUrl": "/announcements/ann-1",
+      "priority": "normal",
+      "visibility": "public_announcement",
+      "channels": [
+        "in_app"
+      ],
+      "isPublicAnnouncement": true,
+      "isRead": false,
+      "createdAt": "2026-10-04T10:18:12.262Z",
+      "updatedAt": "2026-10-04T10:18:12.262Z"
+    },
+    {
+      "id": "notif_1791107999013_601lw1",
+      "title": "Public Announcement",
+      "body": "Platform update",
+      "entityType": "system_announcement",
+      "entityId": "ann-1",
+      "canonicalUrl": "/announcements/ann-1",
+      "priority": "normal",
+      "visibility": "public_announcement",
+      "channels": [
+        "in_app"
+      ],
+      "isPublicAnnouncement": true,
+      "isRead": false,
+      "createdAt": "2026-10-04T09:59:59.013Z",
+      "updatedAt": "2026-10-04T09:59:59.013Z"
+    },
+    {
+      "id": "notif_1791107855736_9wlt8h",
+      "title": "Public Announcement",
+      "body": "Platform update",
+      "entityType": "system_announcement",
+      "entityId": "ann-1",
+      "canonicalUrl": "/announcements/ann-1",
+      "priority": "normal",
+      "visibility": "public_announcement",
+      "channels": [
+        "in_app"
+      ],
+      "isPublicAnnouncement": true,
+      "isRead": false,
+      "createdAt": "2026-10-04T09:57:35.736Z",
+      "updatedAt": "2026-10-04T09:57:35.736Z"
+    },
+    {
+      "id": "notif_1791106016279_ffw6rx",
+      "title": "Public Announcement",
+      "body": "Platform update",
+      "entityType": "system_announcement",
+      "entityId": "ann-1",
+      "canonicalUrl": "/announcements/ann-1",
+      "priority": "normal",
+      "visibility": "public_announcement",
+      "channels": [
+        "in_app"
+      ],
+      "isPublicAnnouncement": true,
+      "isRead": false,
+      "createdAt": "2026-10-04T09:26:56.279Z",
+      "updatedAt": "2026-10-04T09:26:56.279Z"
+    },
+    {
+      "id": "notif_1791105094804_jep80q",
+      "title": "Public Announcement",
+      "body": "Platform update",
+      "entityType": "system_announcement",
+      "entityId": "ann-1",
+      "canonicalUrl": "/announcements/ann-1",
+      "priority": "normal",
+      "visibility": "public_announcement",
+      "channels": [
+        "in_app"
+      ],
+      "isPublicAnnouncement": true,
+      "isRead": false,
+      "createdAt": "2026-10-04T09:11:34.804Z",
+      "updatedAt": "2026-10-04T09:11:34.804Z"
+    },
+    {
+      "id": "notif_1791032973039_ci13th",
+      "title": "Public Announcement",
+      "body": "Platform update",
+      "entityType": "system_announcement",
+      "entityId": "ann-1",
+      "canonicalUrl": "/announcements/ann-1",
+      "priority": "normal",
+      "visibility": "public_announcement",
+      "channels": [
+        "in_app"
+      ],
+      "isPublicAnnouncement": true,
+      "isRead": false,
+      "createdAt": "2026-10-03T13:09:33.039Z",
+      "updatedAt": "2026-10-03T13:09:33.039Z"
+    },
+    {
+      "id": "notif_1791017829401_exjxkc",
+      "title": "Public Announcement",
+      "body": "Platform update",
+      "entityType": "system_announcement",
+      "entityId": "ann-1",
+      "canonicalUrl": "/announcements/ann-1",
+      "priority": "normal",
+      "visibility": "public_announcement",
+      "channels": [
+        "in_app"
+      ],
+      "isPublicAnnouncement": true,
+      "isRead": false,
+      "createdAt": "2026-10-03T08:57:09.401Z",
+      "updatedAt": "2026-10-03T08:57:09.401Z"
+    },
+    {
+      "id": "notif_1791017641200_sjnukt",
+      "title": "Public Announcement",
+      "body": "Platform update",
+      "entityType": "system_announcement",
+      "entityId": "ann-1",
+      "canonicalUrl": "/announcements/ann-1",
+      "priority": "normal",
+      "visibility": "public_announcement",
+      "channels": [
+        "in_app"
+      ],
+      "isPublicAnnouncement": true,
+      "isRead": false,
+      "createdAt": "2026-10-03T08:54:01.200Z",
+      "updatedAt": "2026-10-03T08:54:01.200Z"
+    },
+    {
+      "id": "notif_1791016107578_ksvcrr",
+      "title": "Public Announcement",
+      "body": "Platform update",
+      "entityType": "system_announcement",
+      "entityId": "ann-1",
+      "canonicalUrl": "/announcements/ann-1",
+      "priority": "normal",
+      "visibility": "public_announcement",
+      "channels": [
+        "in_app"
+      ],
+      "isPublicAnnouncement": true,
+      "isRead": false,
+      "createdAt": "2026-10-03T08:28:27.578Z",
+      "updatedAt": "2026-10-03T08:28:27.578Z"
+    },
+    {
+      "id": "notif_1791015992722_ensymx",
+      "title": "Public Announcement",
+      "body": "Platform update",
+      "entityType": "system_announcement",
+      "entityId": "ann-1",
+      "canonicalUrl": "/announcements/ann-1",
+      "priority": "normal",
+      "visibility": "public_announcement",
+      "channels": [
+        "in_app"
+      ],
+      "isPublicAnnouncement": true,
+      "isRead": false,
+      "createdAt": "2026-10-03T08:26:32.722Z",
+      "updatedAt": "2026-10-03T08:26:32.722Z"
+    },
+    {
+      "id": "notif_1791015794808_9g6ikq",
+      "title": "Public Announcement",
+      "body": "Platform update",
+      "entityType": "system_announcement",
+      "entityId": "ann-1",
+      "canonicalUrl": "/announcements/ann-1",
+      "priority": "normal",
+      "visibility": "public_announcement",
+      "channels": [
+        "in_app"
+      ],
+      "isPublicAnnouncement": true,
+      "isRead": false,
+      "createdAt": "2026-10-03T08:23:14.808Z",
+      "updatedAt": "2026-10-03T08:23:14.808Z"
+    },
+    {
+      "id": "notif_1791014986981_g5siwo",
+      "title": "Public Announcement",
+      "body": "Platform update",
+      "entityType": "system_announcement",
+      "entityId": "ann-1",
+      "canonicalUrl": "/announcements/ann-1",
+      "priority": "normal",
+      "visibility": "public_announcement",
+      "channels": [
+        "in_app"
+      ],
+      "isPublicAnnouncement": true,
+      "isRead": false,
+      "createdAt": "2026-10-03T08:09:46.982Z",
+      "updatedAt": "2026-10-03T08:09:46.982Z"
+    },
+    {
+      "id": "notif_1791014300835_o19z15",
+      "title": "Public Announcement",
+      "body": "Platform update",
+      "entityType": "system_announcement",
+      "entityId": "ann-1",
+      "canonicalUrl": "/announcements/ann-1",
+      "priority": "normal",
+      "visibility": "public_announcement",
+      "channels": [
+        "in_app"
+      ],
+      "isPublicAnnouncement": true,
+      "isRead": false,
+      "createdAt": "2026-10-03T07:58:20.835Z",
+      "updatedAt": "2026-10-03T07:58:20.835Z"
+    },
+    {
+      "id": "notif_1791012645104_lf7ham",
+      "title": "Public Announcement",
+      "body": "Platform update",
+      "entityType": "system_announcement",
+      "entityId": "ann-1",
+      "canonicalUrl": "/announcements/ann-1",
+      "priority": "normal",
+      "visibility": "public_announcement",
+      "channels": [
+        "in_app"
+      ],
+      "isPublicAnnouncement": true,
+      "isRead": false,
+      "createdAt": "2026-10-03T07:30:45.104Z",
+      "updatedAt": "2026-10-03T07:30:45.104Z"
+    },
+    {
+      "id": "notif_1791012615943_1dlfec",
+      "title": "Public Announcement",
+      "body": "Platform update",
+      "entityType": "system_announcement",
+      "entityId": "ann-1",
+      "canonicalUrl": "/announcements/ann-1",
+      "priority": "normal",
+      "visibility": "public_announcement",
+      "channels": [
+        "in_app"
+      ],
+      "isPublicAnnouncement": true,
+      "isRead": false,
+      "createdAt": "2026-10-03T07:30:15.943Z",
+      "updatedAt": "2026-10-03T07:30:15.943Z"
+    },
+    {
+      "id": "notif_1791012542343_cmgd8t",
+      "title": "Public Announcement",
+      "body": "Platform update",
+      "entityType": "system_announcement",
+      "entityId": "ann-1",
+      "canonicalUrl": "/announcements/ann-1",
+      "priority": "normal",
+      "visibility": "public_announcement",
+      "channels": [
+        "in_app"
+      ],
+      "isPublicAnnouncement": true,
+      "isRead": false,
+      "createdAt": "2026-10-03T07:29:02.343Z",
+      "updatedAt": "2026-10-03T07:29:02.343Z"
+    },
+    {
+      "id": "notif_1791010365353_pboql9",
+      "title": "Public Announcement",
+      "body": "Platform update",
+      "entityType": "system_announcement",
+      "entityId": "ann-1",
+      "canonicalUrl": "/announcements/ann-1",
+      "priority": "normal",
+      "visibility": "public_announcement",
+      "channels": [
+        "in_app"
+      ],
+      "isPublicAnnouncement": true,
+      "isRead": false,
+      "createdAt": "2026-10-03T06:52:45.353Z",
+      "updatedAt": "2026-10-03T06:52:45.353Z"
+    },
+    {
+      "id": "notif_1791009260163_p349wu",
+      "title": "Public Announcement",
+      "body": "Platform update",
+      "entityType": "system_announcement",
+      "entityId": "ann-1",
+      "canonicalUrl": "/announcements/ann-1",
+      "priority": "normal",
+      "visibility": "public_announcement",
+      "channels": [
+        "in_app"
+      ],
+      "isPublicAnnouncement": true,
+      "isRead": false,
+      "createdAt": "2026-10-03T06:34:20.164Z",
+      "updatedAt": "2026-10-03T06:34:20.164Z"
+    },
+    {
+      "id": "notif_1791009137522_n9mxbg",
+      "title": "Public Announcement",
+      "body": "Platform update",
+      "entityType": "system_announcement",
+      "entityId": "ann-1",
+      "canonicalUrl": "/announcements/ann-1",
+      "priority": "normal",
+      "visibility": "public_announcement",
+      "channels": [
+        "in_app"
+      ],
+      "isPublicAnnouncement": true,
+      "isRead": false,
+      "createdAt": "2026-10-03T06:32:17.522Z",
+      "updatedAt": "2026-10-03T06:32:17.522Z"
+    },
+    {
+      "id": "notif_1791008047725_k7vqtk",
+      "title": "Public Announcement",
+      "body": "Platform update",
+      "entityType": "system_announcement",
+      "entityId": "ann-1",
+      "canonicalUrl": "/announcements/ann-1",
+      "priority": "normal",
+      "visibility": "public_announcement",
+      "channels": [
+        "in_app"
+      ],
+      "isPublicAnnouncement": true,
+      "isRead": false,
+      "createdAt": "2026-10-03T06:14:07.725Z",
+      "updatedAt": "2026-10-03T06:14:07.725Z"
+    },
+    {
+      "id": "notif_1791007819711_3e4n8b",
+      "title": "Public Announcement",
+      "body": "Platform update",
+      "entityType": "system_announcement",
+      "entityId": "ann-1",
+      "canonicalUrl": "/announcements/ann-1",
+      "priority": "normal",
+      "visibility": "public_announcement",
+      "channels": [
+        "in_app"
+      ],
+      "isPublicAnnouncement": true,
+      "isRead": false,
+      "createdAt": "2026-10-03T06:10:19.711Z",
+      "updatedAt": "2026-10-03T06:10:19.711Z"
+    },
+    {
+      "id": "notif_1791007439600_9kw7x3",
+      "title": "Public Announcement",
+      "body": "Platform update",
+      "entityType": "system_announcement",
+      "entityId": "ann-1",
+      "canonicalUrl": "/announcements/ann-1",
+      "priority": "normal",
+      "visibility": "public_announcement",
+      "channels": [
+        "in_app"
+      ],
+      "isPublicAnnouncement": true,
+      "isRead": false,
+      "createdAt": "2026-10-03T06:03:59.600Z",
+      "updatedAt": "2026-10-03T06:03:59.600Z"
+    },
+    {
+      "id": "notif_1791006102842_x7adrj",
+      "title": "Public Announcement",
+      "body": "Platform update",
+      "entityType": "system_announcement",
+      "entityId": "ann-1",
+      "canonicalUrl": "/announcements/ann-1",
+      "priority": "normal",
+      "visibility": "public_announcement",
+      "channels": [
+        "in_app"
+      ],
+      "isPublicAnnouncement": true,
+      "isRead": false,
+      "createdAt": "2026-10-03T05:41:42.842Z",
+      "updatedAt": "2026-10-03T05:41:42.842Z"
+    },
+    {
+      "id": "notif_1791005525287_injldw",
+      "title": "Public Announcement",
+      "body": "Platform update",
+      "entityType": "system_announcement",
+      "entityId": "ann-1",
+      "canonicalUrl": "/announcements/ann-1",
+      "priority": "normal",
+      "visibility": "public_announcement",
+      "channels": [
+        "in_app"
+      ],
+      "isPublicAnnouncement": true,
+      "isRead": false,
+      "createdAt": "2026-10-03T05:32:05.287Z",
+      "updatedAt": "2026-10-03T05:32:05.287Z"
+    },
+    {
+      "id": "notif_1791005321000_r30yq3",
+      "title": "Public Announcement",
+      "body": "Platform update",
+      "entityType": "system_announcement",
+      "entityId": "ann-1",
+      "canonicalUrl": "/announcements/ann-1",
+      "priority": "normal",
+      "visibility": "public_announcement",
+      "channels": [
+        "in_app"
+      ],
+      "isPublicAnnouncement": true,
+      "isRead": false,
+      "createdAt": "2026-10-03T05:28:41.000Z",
+      "updatedAt": "2026-10-03T05:28:41.000Z"
+    },
+    {
+      "id": "notif_1790835503338_imnyfx",
+      "title": "Public Announcement",
+      "body": "Platform update",
+      "entityType": "system_announcement",
+      "entityId": "ann-1",
+      "canonicalUrl": "/announcements/ann-1",
+      "priority": "normal",
+      "visibility": "public_announcement",
+      "channels": [
+        "in_app"
+      ],
+      "isPublicAnnouncement": true,
+      "isRead": false,
+      "createdAt": "2026-10-01T06:18:23.338Z",
+      "updatedAt": "2026-10-01T06:18:23.338Z"
+    },
+    {
+      "id": "notif_1790834146482_iptawc",
+      "title": "Public Announcement",
+      "body": "Platform update",
+      "entityType": "system_announcement",
+      "entityId": "ann-1",
+      "canonicalUrl": "/announcements/ann-1",
+      "priority": "normal",
+      "visibility": "public_announcement",
+      "channels": [
+        "in_app"
+      ],
+      "isPublicAnnouncement": true,
+      "isRead": false,
+      "createdAt": "2026-10-01T05:55:46.482Z",
+      "updatedAt": "2026-10-01T05:55:46.482Z"
+    },
+    {
+      "id": "notif_1790833970338_1j0q6g",
+      "title": "Public Announcement",
+      "body": "Platform update",
+      "entityType": "system_announcement",
+      "entityId": "ann-1",
+      "canonicalUrl": "/announcements/ann-1",
+      "priority": "normal",
+      "visibility": "public_announcement",
+      "channels": [
+        "in_app"
+      ],
+      "isPublicAnnouncement": true,
+      "isRead": false,
+      "createdAt": "2026-10-01T05:52:50.338Z",
+      "updatedAt": "2026-10-01T05:52:50.338Z"
+    },
+    {
+      "id": "notif_1790833116835_oxj3ft",
+      "title": "SanatanMarga 5.0 Public Announcement",
+      "body": "Platform 5.0 Beta cutover complete with zero regressions.",
+      "entityType": "system_announcement",
+      "entityId": "launch-2026",
+      "canonicalUrl": "/announcements/launch-2026",
+      "priority": "high",
+      "visibility": "public_announcement",
+      "channels": [
+        "in_app",
+        "web_push"
+      ],
+      "isPublicAnnouncement": true,
+      "isRead": false,
+      "createdAt": "2026-10-01T05:38:36.835Z",
+      "updatedAt": "2026-10-01T05:38:36.835Z"
+    },
+    {
+      "id": "notif_1790832954196_hcputu",
+      "title": "SanatanMarga 5.0 Public Announcement",
+      "body": "Platform 5.0 Beta cutover complete with zero regressions.",
+      "entityType": "system_announcement",
+      "entityId": "launch-2026",
+      "canonicalUrl": "/announcements/launch-2026",
+      "priority": "high",
+      "visibility": "public_announcement",
+      "channels": [
+        "in_app",
+        "web_push"
+      ],
+      "isPublicAnnouncement": true,
+      "isRead": false,
+      "createdAt": "2026-10-01T05:35:54.196Z",
+      "updatedAt": "2026-10-01T05:35:54.196Z"
+    },
+    {
+      "id": "notif_ann_5_0_launch",
+      "title": "SanatanMarga 5.0 Beta Active",
+      "body": "Welcome to SanatanMarga 5.0 Beta. Experience unified Vedic journalism, fast snapshots, and real-time dispatches.",
+      "entityType": "system_announcement",
+      "entityId": "ann-5-0-launch",
+      "canonicalUrl": "/announcements/ann-5-0-launch",
+      "priority": "high",
+      "visibility": "public_announcement",
+      "channels": [
+        "in_app",
+        "web_push"
+      ],
+      "isPublicAnnouncement": true,
+      "isRead": false,
+      "createdAt": "2026-10-01T04:35:54.191Z",
+      "updatedAt": "2026-10-01T04:35:54.191Z"
+    },
+    {
+      "id": "notif_ann_maha_shivaratri_2026",
+      "title": "Upcoming Grand Celebration: Maha Shivaratri 2026",
+      "body": "Join the live streaming and spiritual discourses from Pashupatinath temple.",
+      "entityType": "event",
+      "entityId": "maha-shivaratri-2026",
+      "canonicalUrl": "/event/maha-shivaratri-2026",
+      "priority": "normal",
+      "visibility": "public_announcement",
+      "channels": [
+        "in_app"
+      ],
+      "isPublicAnnouncement": true,
+      "isRead": false,
+      "createdAt": "2026-10-01T03:35:54.191Z",
+      "updatedAt": "2026-10-01T03:35:54.191Z"
+    }
+  ]
+}

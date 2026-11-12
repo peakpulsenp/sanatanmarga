@@ -1,0 +1,90 @@
+[
+  {
+    "id": "edge-pashupati-padt",
+    "sourceId": "pashupatinath",
+    "targetId": "padt-nepal",
+    "relation": "oversees",
+    "labelNepali": "व्यवस्थापन तथा संरक्षण",
+    "labelEnglish": "Managed by",
+    "weight": 1.0,
+    "createdAt": "2026-01-01T00:00:00.000Z",
+    "updatedAt": "2026-08-30T00:00:00.000Z"
+  },
+  {
+    "id": "edge-gita-krishna",
+    "sourceId": "gita",
+    "targetId": "krishna",
+    "relation": "authored_by",
+    "labelNepali": "उपदेश प्रदानकर्ता",
+    "labelEnglish": "Spoken by",
+    "weight": 1.0,
+    "createdAt": "2026-01-01T00:00:00.000Z",
+    "updatedAt": "2026-08-30T00:00:00.000Z"
+  },
+  {
+    "id": "edge-pashupati-gita",
+    "sourceId": "pashupatinath",
+    "targetId": "gita",
+    "relation": "referenced_in",
+    "labelNepali": "वैदिक सनातन परम्परा सम्बद्ध",
+    "labelEnglish": "Vedic tradition connection",
+    "weight": 0.8,
+    "createdAt": "2026-01-01T00:00:00.000Z",
+    "updatedAt": "2026-08-30T00:00:00.000Z"
+  },
+  {
+    "id": "edge-rigveda-gita",
+    "sourceId": "gita",
+    "targetId": "rigveda",
+    "relation": "explained_in",
+    "labelNepali": "वेदान्त ज्ञानको आधार",
+    "labelEnglish": "Based on Vedic Philosophy",
+    "weight": 0.95,
+    "createdAt": "2026-01-01T00:00:00.000Z",
+    "updatedAt": "2026-08-30T00:00:00.000Z"
+  },
+  {
+    "id": "edge-muktinath-pashupati",
+    "sourceId": "muktinath",
+    "targetId": "pashupatinath",
+    "relation": "associated_with",
+    "labelNepali": "नेपालका प्रमुख धामहरू",
+    "labelEnglish": "Major Sacred Pilgrimage Corridor",
+    "weight": 0.85,
+    "createdAt": "2026-01-01T00:00:00.000Z",
+    "updatedAt": "2026-08-30T00:00:00.000Z"
+  },
+  {
+    "id": "edge-janaki-muktinath",
+    "sourceId": "janaki-mandir",
+    "targetId": "muktinath",
+    "relation": "associated_with",
+    "labelNepali": "नेपालका चार धाम",
+    "labelEnglish": "Sacred Nepal Circuit",
+    "weight": 0.75,
+    "createdAt": "2026-01-01T00:00:00.000Z",
+    "updatedAt": "2026-08-30T00:00:00.000Z"
+  },
+  {
+    "id": "edge-lumbini-muktinath",
+    "sourceId": "lumbini",
+    "targetId": "muktinath",
+    "relation": "associated_with",
+    "labelNepali": "साझा आध्यात्मिक सम्पदा",
+    "labelEnglish": "Spiritual Heritage Synergy",
+    "weight": 0.7,
+    "createdAt": "2026-01-01T00:00:00.000Z",
+    "updatedAt": "2026-08-30T00:00:00.000Z"
+  },
+  {
+    "id": "edge-dashain-gita",
+    "sourceId": "dashain",
+    "targetId": "gita",
+    "relation": "associated_with",
+    "labelNepali": "धर्मसंस्थापन र असत्यमाथि सत्यको विजय",
+    "labelEnglish": "Dharma restoration philosophy",
+    "weight": 0.8,
+    "createdAt": "2026-01-01T00:00:00.000Z",
+    "updatedAt": "2026-08-30T00:00:00.000Z"
+  }
+]

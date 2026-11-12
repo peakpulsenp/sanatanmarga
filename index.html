@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="ne">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    
+    <!-- Apple Ecosystem & iOS PWA Compatibility -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Sanatan Marga" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+    <link rel="mask-icon" href="/logo.svg" color="#111C2D" />
+    <meta name="theme-color" content="#111C2D" />
+
+    <script>
+      window.deferredPWAInstallPrompt = null;
+      window.addEventListener('beforeinstallprompt', function(e) {
+        e.preventDefault();
+        window.deferredPWAInstallPrompt = e;
+        window.dispatchEvent(new CustomEvent('pwa-installable'));
+      });
+    </script>
+    
+    <!-- Primary Meta Tags -->
+    <title>Sanatan Marga | सत्य, तथ्य र निष्पक्ष - नेपालको अग्रणी डिजिटल समाचार तथा ज्ञान सञ्जाल</title>
+    <meta name="title" content="Sanatan Marga | सत्य, तथ्य र निष्पक्ष - नेपालको अग्रणी डिजिटल समाचार तथा ज्ञान सञ्जाल" />
+    <meta name="description" content="सनातन मार्ग - नेपालको भरपर्दो डिजिटल मिडिया तथा सांस्कृतिक पोर्टल। ताजा राष्ट्रिय-अन्तर्राष्ट्रिय समाचार, राजनीति, नेपाल हब, पञ्चाङ्ग पात्रो, सनातन ग्रन्थ (SGIS) र गुरुकुल ज्ञान सञ्जाल।" />
+    <meta name="keywords" content="सनातन मार्ग, Sanatan Marga, SanatanMedia, नेपाली समाचार, Nepal News, nepali patrika, panchang, nepal hub, sgis, sanatan grantha, sanatan gurukul, chautari, radio sanatan" />
+    <meta name="author" content="Sanatan Marga Editorial Board" />
+    <meta name="publisher" content="Sanatan Marga Network" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="language" content="Nepali" />
+    <meta name="geo.region" content="NP" />
+    <meta name="geo.placename" content="Kathmandu" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://sanatanmarga.com/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Sanatan Marga" />
+    <meta property="og:url" content="https://sanatanmarga.com/" />
+    <meta property="og:title" content="Sanatan Marga | सत्य, तथ्य र निष्पक्ष - राष्ट्रिय समाचार र नेपाल हब" />
+    <meta property="og:description" content="नेपालको अग्रणी राष्ट्रिय डिजिटल मिडिया, पञ्चाङ्ग पात्रो, बजार मूल्य, प्रत्यक्ष प्रसारण तथा सरस्वती ज्ञान सञ्जाल।" />
+    <meta property="og:image" content="https://sanatanmarga.com/logo.png" />
+    <meta property="og:image:alt" content="Sanatan Marga Logo" />
+    <meta property="og:locale" content="ne_NP" />
+    <meta property="og:locale:alternate" content="en_US" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@sanatanmarga" />
+    <meta name="twitter:creator" content="@sanatanmarga" />
+    <meta name="twitter:title" content="Sanatan Marga | सत्य, तथ्य र निष्पक्ष" />
+    <meta name="twitter:description" content="नेपालको भरपर्दो डिजिटल मिडिया, पञ्चाङ्ग पात्रो, बजार भाउ र सांस्कृतिक ज्ञान सञ्जाल।" />
+    <meta name="twitter:image" content="https://sanatanmarga.com/logo.png" />
+
+    <!-- Favicons & App Icons -->
+    <link rel="icon" href="/icons/icon-192.png" />
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <meta name="theme-color" content="#0072B5" />
+
+    <!-- Schema.org Structured Data (JSON-LD) for Organization & SearchAction -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "NewsMediaOrganization",
+            "@id": "https://sanatanmarga.com/#organization",
+            "name": "Sanatan Marga",
+            "alternateName": "सनातन मार्ग",
+            "url": "https://sanatanmarga.com",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://sanatanmarga.com/logo.png",
+              "caption": "Sanatan Marga"
+            },
+            "sameAs": [
+              "https://facebook.com/sanatanmarga",
+              "https://twitter.com/sanatanmarga",
+              "https://youtube.com/@sanatanmarga"
+            ],
+            "description": "नेपालको अग्रणी डिजिटल समाचार पोर्टल तथा सांस्कृतिक नलेज हब।",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Kathmandu",
+              "addressCountry": "NP"
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://sanatanmarga.com/#website",
+            "url": "https://sanatanmarga.com/",
+            "name": "Sanatan Marga",
+            "description": "सत्य, तथ्य र निष्पक्ष - नेपालको अग्रणी डिजिटल समाचार तथा ज्ञान सञ्जाल",
+            "publisher": {
+              "@id": "https://sanatanmarga.com/#organization"
+            },
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://sanatanmarga.com/search?q={search_term_string}"
+              },
+              "query-input": "required name=search_term_string"
+            },
+            "inLanguage": ["ne-NP", "en-US"]
+          }
+        ]
+      }
+    </script>
+
+    <style>
+      /* Prevent dark flash before React loads */
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #ffffff;
+      }
+      :root {
+        background-color: #ffffff;
+      }
+      html {
+        background-color: #ffffff;
+      }
+    </style>
+
+    <script>
+      (function() {
+        try {
+          const saved = localStorage.getItem('theme');
+          const cachedSplashBg = localStorage.getItem('splashBgColor');
+          if (cachedSplashBg) {
+            document.documentElement.style.backgroundColor = cachedSplashBg;
+            document.body.style.backgroundColor = cachedSplashBg;
+          }
+        } catch (e) {
+          // Gracefully handle restricted storage environments (iOS Safari Private mode, WebKit security boundaries)
+        }
+      })();
+    </script>
+
+    <!-- Font Preconnect & Performance Optimization -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://firebasestorage.googleapis.com">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript>
+      <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    </noscript>
+
+    <!-- Google Tag Manager / Analytics (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YOUR_MEASUREMENT_ID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-YOUR_MEASUREMENT_ID');
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

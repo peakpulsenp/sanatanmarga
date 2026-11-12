@@ -1,0 +1,201 @@
+{
+  "generatedAt": "2026-09-26T10:01:44.328Z",
+  "event": {
+    "id": "indra_jatra_2026",
+    "title": "काठमाडौँ इन्द्र जात्रा (Indra Jatra Procession)",
+    "titleEn": "Indra Jatra Procession",
+    "tagline": "Live from Hanumandhoka: Living Goddess Kumari Chariot Journey",
+    "summary": "काठमाडौँ उपत्यकाको सबैभन्दा ठूलो ऐतिहासिक र सांस्कृतिक उत्सव, जसमा जीवित देवी कुमारी, भैरव र गणेशको रथयात्रा हनुमानढोका दरबार क्षेत्रमा भव्य रूपमा भइरहेको छ।",
+    "summaryEn": "Kathmandu's largest historical and cultural street festival. The chariot procession of Living Goddess Kumari, Bhairab, and Ganesh is actively taking place around Hanumandhoka Durbar Square.",
+    "type": "festival",
+    "status": "happening-now",
+    "lifecycleStatus": "live",
+    "date": "2026-08-23",
+    "startAt": "2026-08-23T10:00:00Z",
+    "district": "Kathmandu",
+    "province": "Bagmati Province",
+    "location": "हनुमानढोका, काठमाडौँ (Hanumandhoka, Kathmandu)",
+    "panchangTithi": "द्वादशी (Dwadashi)",
+    "panchangMonth": "भाद्रपद (Bhadrapada)",
+    "confidence": "verified",
+    "freshness": "fresh",
+    "lastVerifiedAt": "2026-08-23T23:35:00Z",
+    "verifiedSource": "गुठी संस्थान र हनुमानढोका दरबार हेरचाह अड्डा (Guthi Sansthan & Hanumandhoka Palace Watch Office)",
+    "sourceUrl": "https://guthisansthan.gov.np",
+    "whyItMatters": "इन्द्र जात्रा काठमाडौँ उपत्यकाको सांस्कृतिक पहिचान, इतिहास र जीवित परम्पराको सर्वोच्च स्तम्भ हो। पृथ्वीनारायण शाहले उपत्यका विजय गरेकै दिन कुमारीको हातबाट टीका ग्रहण गरेपछि यस जात्रालाई राष्ट्रिय संरक्षण प्राप्त भएको थियो।",
+    "whyItMattersEn": "Indra Jatra represents the ultimate pinnacle of living heritage in the Kathmandu Valley. Following the unification of Nepal, this traditional festival received sovereign patron status, symbolizing deep cultural cohesion.",
+    "whatChanged": "कुमारी रथयात्रा हनुमानढोकाबाट मरु, चिकंमुगल हुँदै जैशीदेवल तर्फ प्रस्थान गरेको छ। सुरक्षा तथा भीड व्यवस्थापन चुस्त पारिएको छ।",
+    "whatChangedEn": "The chariot of Living Goddess Kumari has departed Hanumandhoka toward Jaisideval via Maru and Chikanmugal. Municipal security forces are actively managing the dense crowds.",
+    "whatChangedTimeline": [
+      {
+        "time": "18:00",
+        "change": "राष्ट्रपति रामचन्द्र पौडेलद्वारा हनुमानढोका गद्दी बैठकबाट श्री कुमारी, गणेश र भैरवको दर्शन तथा प्रसाद ग्रहण सम्पन्न।"
+      },
+      {
+        "time": "15:30",
+        "change": "कुमारी रथयात्राको पहिलो चरण (क्वेने) सुरु, रथ तान्न स्थानीय सहभागीहरूको उत्साहजनक उपस्थिति।"
+      },
+      {
+        "time": "12:00",
+        "change": "हनुमानढोका परिसरमा लिङ्गो (योसिं) ठड्याइएसँगै मुख्य जात्रा विधिवत रूपमा प्रारम्भ।"
+      }
+    ],
+    "isFeatured": true,
+    "isNational": true,
+    "knowledgeEntities": [
+      "कुमारी (Living Goddess Kumari)",
+      "हनुमानढोका दरबार",
+      "इन्द्र जात्रा (Yenya)",
+      "गुठी संस्थान"
+    ],
+    "knowledgeTags": [
+      "मन्दिर",
+      "इतिहास",
+      "परम्परा",
+      "काठमाडौँ"
+    ],
+    "featuredImage": "https://images.unsplash.com/photo-1605649487212-47bdab064df7?auto=format&fit=crop&w=1200&q=80"
+  },
+  "relatedEvents": [
+    {
+      "id": "patan_krishna_mandir_2026",
+      "title": "कृष्ण जन्माष्टमी पूजा - पाटन कृष्ण मन्दिर",
+      "titleEn": "Krishna Janmashtami Puja - Patan Krishna Mandir",
+      "tagline": "Shikhara Stone Temple: Midnight Celebrations and Worship",
+      "summary": "पाटनको प्रसिद्ध १७औं शताब्दीको शिखर शैलीको ढुङ्गे कृष्ण मन्दिरमा हजारौँ दर्शनार्थीहरूको घुइँचोका साथ कृष्ण जन्माष्टमी पूजा सुरु हुँदैछ।",
+      "summaryEn": "Worship services are commencing at Patan's iconic 17th-century stone Shikhara temple, with thousands of devotees assembling for the holy birth anniversary of Lord Krishna.",
+      "type": "festival",
+      "status": "starting-soon",
+      "lifecycleStatus": "upcoming",
+      "date": "2026-08-24",
+      "startAt": "2026-08-24T04:00:00Z",
+      "district": "Lalitpur",
+      "province": "Bagmati Province",
+      "location": "मङ्गल बजार, ललितपुर (Patan Durbar Square, Lalitpur)",
+      "panchangTithi": "अष्टमी (Ashtami)",
+      "panchangMonth": "भाद्रपद (Bhadrapada)",
+      "confidence": "corroborated",
+      "freshness": "fresh",
+      "lastVerifiedAt": "2026-08-23T22:15:00Z",
+      "verifiedSource": "ललितपुर महानगरपालिका तथा मङ्गल टोल सुधार समिति (Lalitpur Metropolitan City & Mangal Tol Committee)",
+      "whyItMatters": "राजा सिद्धिनरसिंह मल्लद्वारा निर्मित प्रस्तर वास्तुकलाको अनुपम नमुना कृष्ण मन्दिर सनातन आस्थाको धरोहर हो। यहाँको महाभारत र रामायणका बुट्टाहरू संसारभरिका कलाविद्का लागि प्रेरणा हुन्।",
+      "whyItMattersEn": "Commissioned by King Siddhinarasimha Malla in 1637, this masterpiece of Shikhara stone masonry houses exquisite carvings of Mahabharata and Ramayana epics, attracting global heritage scholars.",
+      "whatChanged": "महानगरपालिकाद्वारा स्वयम्सेवक टोलीहरू परिचालन गरिएका छन्। लामो लाम बस्ने दर्शनार्थीका लागि खानेपानी तथा प्राथमिक स्वास्थ्य शिविर खडा गरिएको छ।",
+      "whatChangedEn": "Lalitpur Metropolis has mobilised local volunteer cadres. Water stations and emergency first-aid camps have been set up along the queue routes.",
+      "whatChangedTimeline": [
+        {
+          "time": "21:00",
+          "change": "मन्दिरको गर्भगृहभित्र विशेष अभिषेक पूजा सम्पन्न तथा मन्दिर परिसर झिलिमिली दीप प्रज्वलनले सजाइयो।"
+        },
+        {
+          "time": "16:00",
+          "change": "जिल्ला ट्राफिक प्रहरी ललितपुरद्वारा मङ्गल बजार प्रवेश गर्ने सम्पूर्ण सवारी साधनहरूमाथि रोक लगाइएको सूचना जारी।"
+        }
+      ],
+      "isFeatured": false,
+      "isNational": false,
+      "knowledgeEntities": [
+        "पाटन कृष्ण मन्दिर",
+        "सिद्धिनरसिंह मल्ल",
+        "ललितपुर दरबार",
+        "ललितपुर"
+      ],
+      "knowledgeTags": [
+        "मन्दिर",
+        "कला",
+        "इतिहास",
+        "मल्ल काल"
+      ],
+      "featuredImage": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "id": "civil_code_reforms_2026",
+      "title": "मुलुकी देवानी संहिता संशोधन विधेयकमाथि संवैधानिक छलफल",
+      "titleEn": "Constitutional Deliberation on Civil Code Reforms",
+      "tagline": "Federal Parliament: Reconciling Ancient Traditions with Modern Codification",
+      "summary": "नेपालको मुलुकी देवानी संहितामा प्राचीन सांस्कृतिक परम्परा, गुठी र पारिवारिक सम्पत्ति सम्बन्धी मौलिक कानुनलाई संशोधन गर्न संवैधानिक तथा संसदीय समितिस्तरको छलफल सम्पन्न भएको छ।",
+      "summaryEn": "Sovereign committee deliberation on amending Nepal's National Civil Code to update historic customs, trust assets (Guthi), and family laws into the unified civil framework.",
+      "type": "national",
+      "status": "completed",
+      "lifecycleStatus": "resolved",
+      "date": "2026-08-23",
+      "startAt": "2026-08-23T11:00:00Z",
+      "district": "Kathmandu",
+      "province": "Bagmati Province",
+      "location": "सङ्घीय संसद भवन, नयाँ बानेश्वर (Federal Parliament, Kathmandu)",
+      "confidence": "verified",
+      "freshness": "aging",
+      "lastVerifiedAt": "2026-08-23T18:30:00Z",
+      "verifiedSource": "सङ्घीय संसद सचिवालय (Secretariat of the Federal Parliament of Nepal)",
+      "sourceUrl": "https://hr.parliament.gov.np",
+      "whyItMatters": "नेपालको मूल देवानी संहितापछि यो सबैभन्दा गम्भीर संशोधन हो। यसले गुठीको सांस्कृतिक तथा आर्थिक अधिकार र परम्परागत हक-स्वामित्वलाई संरक्षण गर्दै आधुनिक संवैधानिक मर्म अनुरूप न्यायपूर्ण बनाउन भूमिका खेल्नेछ।",
+      "whyItMattersEn": "As one of the most comprehensive revisions to the unified Civil Code, this bill reconciles customary estate traditions with modern constitutional guarantees, directly impacting public trust infrastructure.",
+      "whatChanged": "संसदको कानून, न्याय तथा मानव अधिकार समितिले दफाहरू संशोधनको मस्यौदा सर्वसम्मतिले पारित गरी पूर्ण बैठकमा पेश गर्ने निर्णय गरेको छ।",
+      "whatChangedEn": "The House Committee on Law and Human Rights unanimously adopted the amendments to the draft code, recommending its tabling in the next plenary session.",
+      "whatChangedTimeline": [
+        {
+          "time": "16:30",
+          "change": "कानून समितिद्वारा देवानी संहिताको दफा संशोधनको मस्यौदा सर्वसम्मतिले पारित।"
+        },
+        {
+          "time": "10:30",
+          "change": "मुख्य सरोकारवाला, गुठीका प्रतिनिधि र संविधानविद्हरूसँग अन्तरक्रियात्मक छलफल प्रारम्भ।"
+        }
+      ],
+      "isFeatured": false,
+      "isNational": true,
+      "knowledgeEntities": [
+        "मुलुकी ऐन",
+        "सङ्घीय संसद",
+        "संवैधानिक कानून",
+        "गुठी संस्थान"
+      ],
+      "knowledgeTags": [
+        "ऐन",
+        "संविधान",
+        "इतिहास",
+        "कानून"
+      ],
+      "featuredImage": "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "id": "janaki_mandir_prep_2026",
+      "title": "जानकी मन्दिर विवाह पञ्चमी बृहत् तयारी बैठक",
+      "titleEn": "Janaki Mandir Vivaha Panchami Preparatory Assembly",
+      "tagline": "Janakpurdham: Traditional Festivity Safety and Coordination Layout",
+      "summary": "जनकपुरधामको सांस्कृतिक तथा आर्थिक मेरुदण्डको रूपमा रहेको ऐतिहासिक विवाह पञ्चमी महोत्सवको पूर्वतयारी तथा सुरक्षा व्यवस्थाका लागि मधेश सरकार र मन्दिर गुठीको संयुक्त बैठक सम्पन्न भएको छ।",
+      "summaryEn": "A high-level joint assembly between the Madhesh Provincial Government and Janaki Mandir Trust to coordinate logistics, security, and cultural grants for the historic Vivaha Panchami celebrations.",
+      "type": "festival",
+      "status": "scheduled",
+      "lifecycleStatus": "upcoming",
+      "date": "2026-08-25",
+      "startAt": "2026-08-25T08:00:00Z",
+      "district": "Dhanusha",
+      "province": "Madhesh Province",
+      "location": "जनकपुरधाम, धनुषा (Janakpurdham, Dhanusha)",
+      "confidence": "verified",
+      "freshness": "fresh",
+      "lastVerifiedAt": "2026-08-23T21:30:00Z",
+      "verifiedSource": "जानकी मन्दिर गुठी व्यवस्थापन समिति (Janaki Mandir Trust Committee)",
+      "whyItMatters": "जनकपुरधाम मिथिला सभ्यताको केन्द्र हो। विवाह पञ्चमी महोत्सवमा नेपाल तथा भारतबाट लाखौँ श्रद्धालु आउने गर्दछन्। यसको उचित व्यवस्थापनले दुवै देशबीचको परापूर्वकालदेखिको सांस्कृतिक सम्बन्धलाई बलियो बनाउँछ।",
+      "whyItMattersEn": "Janakpurdham is the civilizational heart of Mithila. Vivaha Panchami serves as a monumental cross-border bridge, bringing millions of pilgrims from Nepal and India to commemorate the divine wedding of Sita and Rama.",
+      "whatChanged": "मधेश सरकारद्वारा जानकी मन्दिर संरक्षण र मेला व्यवस्थापनका लागि विशेष बजेट विनियोजन गर्ने निर्णय गरिएको छ।",
+      "whatChangedEn": "The provincial government formally approved a specialized grant package dedicated to heritage preservation and smart-crowd management around the sacred temple precinct.",
+      "isFeatured": false,
+      "isNational": false,
+      "knowledgeEntities": [
+        "जानकी मन्दिर",
+        "जनकपुरधाम",
+        "विवाह पञ्चमी",
+        "मिथिला सभ्यता"
+      ],
+      "knowledgeTags": [
+        "मन्दिर",
+        "परम्परा",
+        "संस्कृति",
+        "जनकपुर"
+      ],
+      "featuredImage": "https://images.unsplash.com/photo-1621360841013-c7683c659ec6?auto=format&fit=crop&w=1200&q=80"
+    }
+  ]
+}

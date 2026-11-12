@@ -1,0 +1,64 @@
+{
+  "generatedAt": "2026-09-27T08:12:25.097Z",
+  "slot": "sidebar",
+  "ads": [
+    {
+      "id": "ad_1790405814899",
+      "ctr": 0,
+      "endDate": "2026-10-31T00:00:00.000Z",
+      "advertiserContact": "Contact@address.com",
+      "weight": 10,
+      "targetCategories": [],
+      "impressions": 0,
+      "isActive": true,
+      "priority": 10,
+      "title": "Sidebar",
+      "advertiserName": "Advertiser info:",
+      "createdAt": "2026-09-26T06:56:54.899Z",
+      "imageUrl": "https://i0.wp.com/beachmeter.com/wp-content/uploads/2017/06/250x250px.png?ssl=1",
+      "linkUrl": "https://i0.wp.com/beachmeter.com/wp-content/uploads/2017/06/250x250px.png?ssl=1",
+      "clicks": 0,
+      "position": "sidebar",
+      "targetDistricts": [],
+      "startDate": "2026-09-26T00:00:00.000Z",
+      "isSponsored": false,
+      "status": "active",
+      "updatedAt": "2026-09-26T06:56:54.899Z",
+      "budget": {
+        "pricingModel": "flat_rate",
+        "totalBudget": 5000,
+        "cpcRate": 20,
+        "cpmRate": 150
+      }
+    },
+    {
+      "id": "ad_1790423473561",
+      "ctr": 0,
+      "endDate": "2026-10-31T00:00:00.000Z",
+      "advertiserContact": "Contact@ad.com",
+      "weight": 10,
+      "targetCategories": [],
+      "impressions": 0,
+      "isActive": true,
+      "priority": 10,
+      "title": "Test",
+      "advertiserName": "Tst",
+      "createdAt": "2026-09-26T11:51:13.561Z",
+      "imageUrl": "https://i0.wp.com/beachmeter.com/wp-content/uploads/2017/06/250x250px.png?ssl=1",
+      "linkUrl": "https://i0.wp.com/beachmeter.com/wp-content/uploads/2017/06/250x250px.png?ssl=1",
+      "clicks": 0,
+      "position": "sidebar",
+      "targetDistricts": [],
+      "startDate": "2026-09-26T00:00:00.000Z",
+      "isSponsored": false,
+      "status": "active",
+      "updatedAt": "2026-09-26T11:51:13.561Z",
+      "budget": {
+        "pricingModel": "flat_rate",
+        "totalBudget": 5000,
+        "cpcRate": 20,
+        "cpmRate": 150
+      }
+    }
+  ]
+}

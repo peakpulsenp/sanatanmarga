@@ -1,0 +1,7 @@
+{
+  "consoleErrors": [],
+  "failedRequests": [
+    "net::ERR_BLOCKED_BY_ORB Image"
+  ],
+  "badResponses": []
+}

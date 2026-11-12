@@ -1,0 +1,1 @@
+{"items":[{"id":"sub_1","email":"reader1@example.com","status":"active","tier":"free","createdAt":"2026-10-31T06:13:53.925Z"},{"id":"sub_2","email":"reader2@example.com","status":"active","tier":"premium","createdAt":"2026-11-03T06:13:53.925Z"},{"id":"sub_3","email":"reader3@example.com","status":"unsubscribed","tier":"free","createdAt":"2026-11-06T06:13:53.925Z"}]}

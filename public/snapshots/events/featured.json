@@ -1,0 +1,61 @@
+{
+  "generatedAt": "2026-09-26T10:01:44.328Z",
+  "events": [
+    {
+      "id": "indra_jatra_2026",
+      "title": "काठमाडौँ इन्द्र जात्रा (Indra Jatra Procession)",
+      "titleEn": "Indra Jatra Procession",
+      "tagline": "Live from Hanumandhoka: Living Goddess Kumari Chariot Journey",
+      "summary": "काठमाडौँ उपत्यकाको सबैभन्दा ठूलो ऐतिहासिक र सांस्कृतिक उत्सव, जसमा जीवित देवी कुमारी, भैरव र गणेशको रथयात्रा हनुमानढोका दरबार क्षेत्रमा भव्य रूपमा भइरहेको छ।",
+      "summaryEn": "Kathmandu's largest historical and cultural street festival. The chariot procession of Living Goddess Kumari, Bhairab, and Ganesh is actively taking place around Hanumandhoka Durbar Square.",
+      "type": "festival",
+      "status": "happening-now",
+      "lifecycleStatus": "live",
+      "date": "2026-08-23",
+      "startAt": "2026-08-23T10:00:00Z",
+      "district": "Kathmandu",
+      "province": "Bagmati Province",
+      "location": "हनुमानढोका, काठमाडौँ (Hanumandhoka, Kathmandu)",
+      "panchangTithi": "द्वादशी (Dwadashi)",
+      "panchangMonth": "भाद्रपद (Bhadrapada)",
+      "confidence": "verified",
+      "freshness": "fresh",
+      "lastVerifiedAt": "2026-08-23T23:35:00Z",
+      "verifiedSource": "गुठी संस्थान र हनुमानढोका दरबार हेरचाह अड्डा (Guthi Sansthan & Hanumandhoka Palace Watch Office)",
+      "sourceUrl": "https://guthisansthan.gov.np",
+      "whyItMatters": "इन्द्र जात्रा काठमाडौँ उपत्यकाको सांस्कृतिक पहिचान, इतिहास र जीवित परम्पराको सर्वोच्च स्तम्भ हो। पृथ्वीनारायण शाहले उपत्यका विजय गरेकै दिन कुमारीको हातबाट टीका ग्रहण गरेपछि यस जात्रालाई राष्ट्रिय संरक्षण प्राप्त भएको थियो।",
+      "whyItMattersEn": "Indra Jatra represents the ultimate pinnacle of living heritage in the Kathmandu Valley. Following the unification of Nepal, this traditional festival received sovereign patron status, symbolizing deep cultural cohesion.",
+      "whatChanged": "कुमारी रथयात्रा हनुमानढोकाबाट मरु, चिकंमुगल हुँदै जैशीदेवल तर्फ प्रस्थान गरेको छ। सुरक्षा तथा भीड व्यवस्थापन चुस्त पारिएको छ।",
+      "whatChangedEn": "The chariot of Living Goddess Kumari has departed Hanumandhoka toward Jaisideval via Maru and Chikanmugal. Municipal security forces are actively managing the dense crowds.",
+      "whatChangedTimeline": [
+        {
+          "time": "18:00",
+          "change": "राष्ट्रपति रामचन्द्र पौडेलद्वारा हनुमानढोका गद्दी बैठकबाट श्री कुमारी, गणेश र भैरवको दर्शन तथा प्रसाद ग्रहण सम्पन्न।"
+        },
+        {
+          "time": "15:30",
+          "change": "कुमारी रथयात्राको पहिलो चरण (क्वेने) सुरु, रथ तान्न स्थानीय सहभागीहरूको उत्साहजनक उपस्थिति।"
+        },
+        {
+          "time": "12:00",
+          "change": "हनुमानढोका परिसरमा लिङ्गो (योसिं) ठड्याइएसँगै मुख्य जात्रा विधिवत रूपमा प्रारम्भ।"
+        }
+      ],
+      "isFeatured": true,
+      "isNational": true,
+      "knowledgeEntities": [
+        "कुमारी (Living Goddess Kumari)",
+        "हनुमानढोका दरबार",
+        "इन्द्र जात्रा (Yenya)",
+        "गुठी संस्थान"
+      ],
+      "knowledgeTags": [
+        "मन्दिर",
+        "इतिहास",
+        "परम्परा",
+        "काठमाडौँ"
+      ],
+      "featuredImage": "https://images.unsplash.com/photo-1605649487212-47bdab064df7?auto=format&fit=crop&w=1200&q=80"
+    }
+  ]
+}

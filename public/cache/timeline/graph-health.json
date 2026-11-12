@@ -1,0 +1,22 @@
+{
+  "calculatedAt": "2026-08-30T00:00:00.000Z",
+  "totalEvents": 12,
+  "verifiedEvents": 12,
+  "publishedEvents": 12,
+  "categoryDistribution": {
+    "monument": 4,
+    "festival": 1,
+    "scripture": 1,
+    "treaty": 2,
+    "historical_event": 2,
+    "heritage": 1,
+    "manuscript": 1
+  },
+  "districtCoverage": 4,
+  "validChronologyCount": 10,
+  "pendingChronologyCount": 2,
+  "resolvedKnowledgeLinks": 12,
+  "resolvedArticleLinks": 0,
+  "resolvedProductLinks": 3,
+  "averageConfidence": 0.99
+}

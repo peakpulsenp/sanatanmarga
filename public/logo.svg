@@ -1,0 +1,167 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="100%" height="100%">
+  <defs>
+    <!-- Official Palette Gradients -->
+    <linearGradient id="vermilionRed" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EA381E" />
+      <stop offset="100%" stop-color="#D9381E" />
+    </linearGradient>
+    <linearGradient id="saffronSun" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F5A623" />
+      <stop offset="100%" stop-color="#E07A00" />
+    </linearGradient>
+    <linearGradient id="mountainGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2D3139" />
+      <stop offset="100%" stop-color="#121110" />
+    </linearGradient>
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#D9381E" flood-opacity="0.25" />
+    </filter>
+  </defs>
+
+  <!-- Canvas Container -->
+  <g transform="translate(0, 0)">
+    
+    <!-- 1. SACRED TRISHUL & FLAG ASSEMBLY (TOP CENTER) -->
+    <!-- Trishul Staff -->
+    <rect x="231" y="45" width="4" height="200" fill="#121110" rx="1" />
+    
+    <!-- Trishul Head -->
+    <path d="M233 35 L233 90" stroke="#121110" stroke-width="4" stroke-linecap="round" />
+    <!-- Center Prong -->
+    <path d="M233 22 L228 48 L238 48 Z" fill="#121110" />
+    <!-- Left Prong -->
+    <path d="M233 65 C205 65 198 35 204 30 C208 27 212 35 218 50 C225 60 231 62 233 62" fill="none" stroke="#121110" stroke-width="3.5" stroke-linecap="round" />
+    <path d="M204 30 L199 40 L208 38 Z" fill="#121110" />
+    <!-- Right Prong -->
+    <path d="M233 65 C261 65 268 35 262 30 C258 27 254 35 248 50 C241 60 235 62 233 62" fill="none" stroke="#121110" stroke-width="3.5" stroke-linecap="round" />
+    <path d="M262 30 L267 40 L258 38 Z" fill="#121110" />
+    <!-- Damaru / Knot on Staff -->
+    <path d="M226 95 L240 102 L226 109 L240 109 L226 102 L240 95 Z" fill="#D9381E" />
+
+    <!-- Sacred Double-Triangle Flag (Dhwaja) -->
+    <path d="M235 90 C290 85 360 60 440 68 C390 105 320 105 235 125 Z" fill="url(#vermilionRed)" filter="url(#softGlow)" />
+    <path d="M235 125 C310 120 370 115 470 125 C410 160 330 170 235 230 Z" fill="url(#vermilionRed)" filter="url(#softGlow)" />
+    
+    <!-- Sun Motif in Flag -->
+    <circle cx="310" cy="118" r="22" fill="#FFFFFF" />
+    <!-- Sun Rays in Flag -->
+    <g stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round">
+      <line x1="310" y1="88" x2="310" y2="82" />
+      <line x1="310" y1="148" x2="310" y2="154" />
+      <line x1="280" y1="118" x2="274" y2="118" />
+      <line x1="340" y1="118" x2="346" y2="118" />
+      <line x1="289" y1="97" x2="284" y2="92" />
+      <line x1="331" y1="139" x2="336" y2="144" />
+      <line x1="289" y1="139" x2="284" y2="144" />
+      <line x1="331" y1="97" x2="336" y2="92" />
+    </g>
+
+    <!-- Flowing Ribbon Ties on Trishul -->
+    <path d="M228 100 C200 110 160 140 135 208 C155 175 185 145 228 120 Z" fill="url(#vermilionRed)" />
+
+    <!-- 2. CIRCULAR EMBLEM FRAME & BACKGROUND ELEMENTS -->
+    <!-- Golden Rising Sun behind Mountain -->
+    <circle cx="304" cy="225" r="44" fill="url(#saffronSun)" />
+
+    <!-- Himalayan Mountains (Mount Everest Contour) -->
+    <path d="M152 295 L220 262 L260 280 L304 185 L355 260 L400 220 L470 295 Z" fill="#FFFFFF" stroke="#121110" stroke-width="2" />
+    <path d="M304 185 L308 285 M220 262 L230 290 M400 220 L408 285" stroke="#121110" stroke-width="2.5" />
+    <!-- Mountain Shading / Rock Lines -->
+    <path d="M280 235 L304 185 L328 245 L355 260 L380 295 M220 262 L245 295" fill="none" stroke="#121110" stroke-width="1.8" />
+
+    <!-- Boudhanath Stupa (Left Center) -->
+    <g transform="translate(155, 222) scale(0.65)">
+      <!-- Dome Base -->
+      <path d="M30 80 Q60 40 90 80 Z" fill="#FFFFFF" stroke="#121110" stroke-width="3" />
+      <!-- Harmika Cube with Wisdom Eyes -->
+      <rect x="48" y="25" width="24" height="20" fill="#F5A623" stroke="#121110" stroke-width="2" />
+      <!-- Eyes of Buddha -->
+      <circle cx="54" cy="33" r="2" fill="#121110" />
+      <circle cx="66" cy="33" r="2" fill="#121110" />
+      <path d="M60 36 C58 40 62 40 60 42" fill="none" stroke="#121110" stroke-width="1.5" />
+      <!-- Spire / 13 Steps -->
+      <path d="M60 0 L45 25 L75 25 Z" fill="#D9381E" stroke="#121110" stroke-width="2" />
+      <!-- Prayer Flags (Lungta) -->
+      <path d="M10 80 L50 30 M110 80 L70 30" stroke="#121110" stroke-width="1.5" stroke-dasharray="3 3" />
+    </g>
+
+    <!-- Pashupati & Nyatapola Temple Silhouette (Right Center) -->
+    <g transform="translate(325, 230) scale(0.7)">
+      <!-- Pagoda Roof Tier 1 -->
+      <path d="M20 70 L60 45 L100 70 Z" fill="#D9381E" stroke="#121110" stroke-width="3" />
+      <!-- Pagoda Roof Tier 2 -->
+      <path d="M30 48 L60 28 L90 48 Z" fill="#D9381E" stroke="#121110" stroke-width="3" />
+      <!-- Gajur / Pinnacle -->
+      <path d="M60 12 L56 28 L64 28 Z" fill="#F5A623" stroke="#121110" stroke-width="2" />
+      <!-- Temple Pillars & Door -->
+      <rect x="35" y="70" width="50" height="25" fill="#FFFFFF" stroke="#121110" stroke-width="2.5" />
+      <path d="M50 78 C50 72 70 72 70 78 L70 95 L50 95 Z" fill="#121110" />
+    </g>
+
+    <!-- Surrounding Circular Frame Ring -->
+    <path d="M136 270 C136 170 210 152 300 152 C410 152 470 200 470 285 C470 375 390 435 300 435 C210 435 136 370 136 270" 
+          fill="none" stroke="url(#vermilionRed)" stroke-width="8" stroke-linecap="round" />
+
+    <!-- Red Play Button (Bottom Center of Arc) -->
+    <g transform="translate(300, 412)">
+      <!-- Arc Cutout Accent Line -->
+      <line x1="-50" y1="0" x2="-20" y2="0" stroke="#D9381E" stroke-width="6" stroke-linecap="round" />
+      <line x1="20" y1="0" x2="50" y2="0" stroke="#D9381E" stroke-width="6" stroke-linecap="round" />
+      <!-- Play Triangle -->
+      <path d="M-10 -14 L16 0 L-10 14 Z" fill="url(#vermilionRed)" filter="url(#softGlow)" />
+    </g>
+
+    <!-- 3. BRAND TYPOGRAPHY (SANATAN MARGA / SANATAN MEDIA) -->
+    <!-- "Sanatan" in Ink Black / "Marga" in Vermilion Red / ".com" in Ink Black -->
+    <g transform="translate(300, 488)">
+      <text text-anchor="middle" font-family="'serif', 'Times New Roman', 'Hind Siliguri', sans-serif" font-size="46" font-weight="800">
+        <tspan fill="#121110">Sanatan</tspan>
+        <tspan fill="#D9381E">Marga</tspan>
+        <tspan fill="#121110" font-size="28" font-weight="600">.com</tspan>
+      </text>
+    </g>
+
+    <!-- Sanskrit Motto: धर्मो रक्षति रक्षितः -->
+    <g transform="translate(300, 522)">
+      <!-- Left Red Line -->
+      <line x1="-160" y1="-5" x2="-80" y2="-5" stroke="#D9381E" stroke-width="1.5" />
+      <!-- Sanskrit Text -->
+      <text x="0" y="0" text-anchor="middle" fill="#121110" font-family="'Hind Siliguri', 'Mukta', sans-serif" font-weight="800" font-size="20" letter-spacing="1">
+        धर्मो रक्षति रक्षितः
+      </text>
+      <!-- Right Red Line -->
+      <line x1="80" y1="-5" x2="160" y2="-5" stroke="#D9381E" stroke-width="1.5" />
+    </g>
+
+    <!-- Sub-category Bar: NEWS | VIDEOS | PODCASTS | STORIES | SANATAN -->
+    <g transform="translate(300, 558)" font-family="sans-serif" font-size="11" font-weight="800" fill="#121110" letter-spacing="1.5">
+      <!-- News -->
+      <rect x="-220" y="-12" width="14" height="11" fill="none" stroke="#D9381E" stroke-width="1.8" rx="1" />
+      <line x1="-216" y1="-8" x2="-210" y2="-8" stroke="#D9381E" stroke-width="1.5" />
+      <line x1="-216" y1="-5" x2="-210" y2="-5" stroke="#D9381E" stroke-width="1.5" />
+      <text x="-198" y="-2" text-anchor="start">NEWS</text>
+      <text x="-145" y="-2" fill="#D9381E" font-weight="300">|</text>
+
+      <!-- Videos -->
+      <path d="M-128 -11 L-116 -5 L-128 1 Z" fill="#D9381E" />
+      <text x="-108" y="-2" text-anchor="start">VIDEOS</text>
+      <text x="-52" y="-2" fill="#D9381E" font-weight="300">|</text>
+
+      <!-- Podcasts -->
+      <circle cx="-32" cy="-5" r="4" fill="none" stroke="#D9381E" stroke-width="1.8" />
+      <path d="M-32 -1 C-32 2 -32 4 -32 4 M-35 4 L-29 4" stroke="#D9381E" stroke-width="1.5" />
+      <text x="-18" y="-2" text-anchor="start">PODCASTS</text>
+      <text x="50" y="-2" fill="#D9381E" font-weight="300">|</text>
+
+      <!-- Stories -->
+      <path d="M68 -12 L80 -12 L80 0 L68 0 Z M74 -12 L74 0" fill="none" stroke="#D9381E" stroke-width="1.5" />
+      <text x="88" y="-2" text-anchor="start">STORIES</text>
+      <text x="145" y="-2" fill="#D9381E" font-weight="300">|</text>
+
+      <!-- Sanatan Symbol Om -->
+      <text x="162" y="-1" font-size="14" fill="#D9381E">ॐ</text>
+      <text x="180" y="-2" text-anchor="start">SANATAN</text>
+    </g>
+
+  </g>
+</svg>

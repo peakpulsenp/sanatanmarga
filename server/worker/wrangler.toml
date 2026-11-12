@@ -1,0 +1,42 @@
+name = "sanatanmarga-api"
+main = "src/index.ts"
+compatibility_date = "2025-01-01"
+
+# Cloudflare R2 Bucket Binding (Storage & Snapshots)
+[[r2_buckets]]
+binding = "BUCKET"
+bucket_name = "sanatanmarga-assets"
+
+# Scheduled Cron Trigger for Auto-Sync of R2 Journal to Firebase
+[triggers]
+crons = ["*/5 * * * *"]
+
+# Optional KV namespace for fast edge rate limiting
+# [[kv_namespaces]]
+# binding = "RATE_KV"
+# id = "your-kv-namespace-id"
+
+[vars]
+# Allowed origins for CORS (comma-separated, or * for open access)
+ALLOWED_ORIGINS = "*"
+
+# Public R2 bucket CDN URL or custom domain (e.g. https://assets.sanatanmarga.com)
+R2_PUBLIC_URL = ""
+
+# Firebase Project ID for Google RS256 token verification
+FIREBASE_PROJECT_ID = "pod-studio-saas"
+
+# Default Gemini models
+GEMINI_MODEL = "gemini-2.5-flash"
+GEMINI_TTS_MODEL = "gemini-2.5-flash-preview-tts"
+
+# AI Governance
+AI_DAILY_REQUEST_LIMIT = "5000"
+
+# Admin emails permitted for privileged operations
+ADMIN_EMAILS = "sagarrana@gmail.com,admin@sanatanmarga.com"
+
+# The following secrets should be set using:
+#   npx wrangler secret put GEMINI_API_KEY
+#   npx wrangler secret put ADMIN_API_TOKEN
+#   npx wrangler secret put UPLOAD_SIGNING_SECRET

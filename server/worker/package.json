@@ -1,0 +1,17 @@
+{
+  "name": "sanatanmarga-api",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Production Cloudflare Worker API Gateway for SanatanMarga",
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20250224.0",
+    "typescript": "^5.8.2",
+    "wrangler": "^3.109.2"
+  }
+}

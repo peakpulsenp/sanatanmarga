@@ -1,0 +1,28 @@
+{
+  "calculatedAt": "2026-08-30T00:00:00.000Z",
+  "totalRecords": 12,
+  "verifiedRecords": 12,
+  "publishedRecords": 12,
+  "orphanedRecords": 0,
+  "knowledgeLinks": 12,
+  "timelineLinks": 7,
+  "sgisLinks": 2,
+  "articleLinks": 1,
+  "brokenRelationships": 0,
+  "eraDistribution": {
+    "ancient": 2,
+    "malla": 1,
+    "shah": 5,
+    "rana": 2,
+    "panchayat": 1,
+    "modern": 1
+  },
+  "categoryDistribution": {
+    "treaty": 2,
+    "historical_document": 3,
+    "manuscript": 2,
+    "inscription": 1,
+    "constitutional": 4
+  },
+  "averageConfidence": 0.98
+}

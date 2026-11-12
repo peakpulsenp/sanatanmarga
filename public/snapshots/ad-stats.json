@@ -1,0 +1,103 @@
+{
+  "generatedAt": "2026-09-27T08:12:25.097Z",
+  "totalCampaigns": 2,
+  "activeCampaigns": 2,
+  "scheduledCampaigns": 0,
+  "reviewPendingCampaigns": 0,
+  "pausedCampaigns": 0,
+  "expiredCampaigns": 0,
+  "totalImpressions": 0,
+  "totalClicks": 0,
+  "averageCtr": 0,
+  "estimatedRevenue": 10000,
+  "todayRevenue": 500,
+  "monthRevenue": 8500,
+  "positionStats": {
+    "sidebar": {
+      "impressions": 0,
+      "clicks": 0,
+      "ctr": 0,
+      "count": 2
+    }
+  },
+  "districtStats": {
+    "National (सबै)": {
+      "impressions": 0,
+      "clicks": 0,
+      "campaigns": 2,
+      "revenue": 10000
+    }
+  },
+  "categoryStats": {
+    "all": {
+      "impressions": 0,
+      "clicks": 0,
+      "campaigns": 2
+    }
+  },
+  "deviceStats": {
+    "desktop": {
+      "impressions": 0,
+      "clicks": 0
+    },
+    "mobile": {
+      "impressions": 0,
+      "clicks": 0
+    },
+    "tablet": {
+      "impressions": 0,
+      "clicks": 0
+    }
+  },
+  "membershipStats": {
+    "totalSubscribers": 154,
+    "activeMembers": 136,
+    "mrr": 60984,
+    "annualRunRate": 731808,
+    "retentionRate": 94.6,
+    "monthlyChurnRate": 2.1,
+    "averageLtv": 5800,
+    "tierBreakdown": [
+      {
+        "tierId": "free_patron",
+        "nameNe": "साधारण पाठक",
+        "count": 100,
+        "priceNpr": 0
+      },
+      {
+        "tierId": "sadhak",
+        "nameNe": "साधक सदस्य",
+        "count": 34,
+        "priceNpr": 299
+      },
+      {
+        "tierId": "sanrakshak",
+        "nameNe": "संरक्षक सदस्य",
+        "count": 15,
+        "priceNpr": 999
+      },
+      {
+        "tierId": "corporate_patron",
+        "nameNe": "संस्थागत संरक्षक",
+        "count": 5,
+        "priceNpr": 4999
+      }
+    ]
+  },
+  "advertisers": [
+    {
+      "name": "Advertiser info:",
+      "campaigns": 1,
+      "impressions": 0,
+      "clicks": 0,
+      "spend": 5000
+    },
+    {
+      "name": "Tst",
+      "campaigns": 1,
+      "impressions": 0,
+      "clicks": 0,
+      "spend": 5000
+    }
+  ]
+}

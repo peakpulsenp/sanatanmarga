@@ -1,0 +1,30 @@
+{
+  "snapshotVersion": "2.0.0-PROD",
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-30T00:00:00.000Z",
+  "entityCount": 9,
+  "edgeCount": 8,
+  "referenceCount": 4,
+  "modules": {
+    "entities": {
+      "version": "2.0.0",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "count": 9
+    },
+    "edges": {
+      "version": "2.0.0",
+      "sha256": "ca978112ca1bbdcafac231b39a23dc4da7860814961409fa547a1739c9053531",
+      "count": 8
+    },
+    "references": {
+      "version": "2.0.0",
+      "sha256": "16ec31f6d90a5d4e1383cdcf0f0d2eb1d12da74e1d74659b8eb6a987d657597c",
+      "count": 4
+    },
+    "graphHealth": {
+      "version": "2.0.0",
+      "sha256": "81c3b080dad537de7e10e0987a4bf52e20280f6d84140be9d91a0244e0d30347",
+      "count": 1
+    }
+  }
+}

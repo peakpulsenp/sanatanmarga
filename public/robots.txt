@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /api/
+Disallow: /search
+Disallow: /draft/
+Disallow: /review/
+Disallow: /preview/
+Disallow: /settings/
+Disallow: /account/
+Disallow: /queue/
+
+Sitemap: https://sanatanmarga.com/sitemap.xml

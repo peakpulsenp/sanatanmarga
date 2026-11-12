@@ -1,0 +1,75 @@
+import { motion, AnimatePresence } from "motion/react";
+import { AlertTriangle, X } from "lucide-react";
+
+interface ConfirmModalProps {
+  isOpen: boolean;
+  title: string;
+  message: string;
+  confirmText?: string;
+  cancelText?: string;
+  onConfirm: () => void;
+  onCancel: () => void;
+}
+
+export default function ConfirmModal({
+  isOpen,
+  title,
+  message,
+  confirmText = "ठिक छ",
+  cancelText = "रद्द गर्नुहोस्",
+  onConfirm,
+  onCancel
+}: ConfirmModalProps) {
+  return (
+    <AnimatePresence>
+      {isOpen && (
+        <div className="fixed inset-0 z-[100000] flex items-center justify-center p-6">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={onCancel}
+            className="absolute inset-0 bg-slate-900/60 backdrop-blur-sm"
+          />
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.9, y: 20 }}
+            className="relative bg-card border border-border-theme rounded-[var(--app-radius)] p-10 max-w-md w-full shadow-2xl flex flex-col gap-6"
+          >
+            <button 
+              onClick={onCancel}
+              className="absolute top-6 right-6 p-2 text-muted-foreground hover:text-card-foreground transition-colors"
+            >
+              <X size={20} />
+            </button>
+
+            <div className="w-16 h-16 bg-orange-100/10 text-orange-500 rounded-full flex items-center justify-center">
+              <AlertTriangle size={32} />
+            </div>
+
+            <div className="flex flex-col gap-2">
+              <h3 className="text-2xl font-black text-card-foreground uppercase tracking-tight">{title}</h3>
+              <p className="text-sm font-medium text-muted-foreground leading-relaxed">{message}</p>
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-3 pt-2">
+              <button
+                onClick={onCancel}
+                className="flex-1 px-6 py-4 rounded-2xl font-black text-xs uppercase tracking-widest text-muted-foreground bg-muted hover:bg-muted/80 transition-all"
+              >
+                {cancelText}
+              </button>
+              <button
+                onClick={onConfirm}
+                className="flex-1 px-6 py-4 rounded-2xl font-black text-xs uppercase tracking-widest text-white bg-primary shadow-lg shadow-primary/20 hover:scale-105 transition-transform"
+              >
+                {confirmText}
+              </button>
+            </div>
+          </motion.div>
+        </div>
+      )}
+    </AnimatePresence>
+  );
+}

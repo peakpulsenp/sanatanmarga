@@ -1,0 +1,16 @@
+{
+  "totalNodes": 9,
+  "totalEdges": 8,
+  "verifiedNodes": 9,
+  "publishedNodes": 9,
+  "draftNodes": 0,
+  "pendingNodes": 0,
+  "orphanNodes": 0,
+  "disconnectedComponents": 1,
+  "averageDegree": 1.78,
+  "districtCoverage": 100,
+  "provinceCoverage": 100,
+  "scriptureCoverage": 88.9,
+  "provenanceCoverage": 100,
+  "calculatedAt": "2026-08-30T00:00:00.000Z"
+}
