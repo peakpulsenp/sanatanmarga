@@ -135,8 +135,72 @@ export function sanitizeSegment(v: string, fallback: string): string {
   return s || fallback;
 }
 
+export function buildMediaObjectKey(
+  category: string,
+  fileName: string,
+  mimeType: string,
+  tenantId = "default"
+): string {
+  const now = new Date();
+  const yyyy = now.getUTCFullYear();
+  const mm = String(now.getUTCMonth() + 1).padStart(2, "0");
+  const cleanCat = sanitizeSegment(category, "general");
+  const cleanTenant = sanitizeSegment(tenantId, "default");
+  const cleanFile = sanitizeFileName(fileName || "media");
+  const id = uuid();
+
+  let folder = "media";
+  if (mimeType.startsWith("image/")) {
+    folder = "images";
+  } else if (mimeType.startsWith("audio/")) {
+    folder = "audio";
+  } else if (mimeType.startsWith("video/")) {
+    folder = "videos";
+  } else if (
+    mimeType.includes("pdf") ||
+    mimeType.includes("document") ||
+    mimeType.includes("text/") ||
+    cleanFile.endsWith(".pdf") ||
+    cleanFile.endsWith(".doc")
+  ) {
+    folder = "documents";
+  }
+
+  return `${folder}/${cleanCat}/${yyyy}/${mm}/${id}-${cleanFile}`;
+}
+
+export function getSnapshotBucket(env: Env): R2Bucket {
+  const b = env.SNAPSHOT_BUCKET || env.BUCKET;
+  if (!b) {
+    throw new Error("Snapshot R2 bucket not configured (SNAPSHOT_BUCKET or BUCKET required)");
+  }
+  return b;
+}
+
+export function getMediaBucket(env: Env): R2Bucket {
+  const b = env.MEDIA_BUCKET || env.BUCKET;
+  if (!b) {
+    throw new Error("Media R2 bucket not configured (MEDIA_BUCKET or BUCKET required)");
+  }
+  return b;
+}
+
 export function publicUrlFor(env: Env, origin: string, key: string): string {
   const encoded = key.split("/").map(encodeURIComponent).join("/");
+  if (
+    key.startsWith("media/") ||
+    key.startsWith("images/") ||
+    key.startsWith("audio/") ||
+    key.startsWith("videos/") ||
+    key.startsWith("documents/") ||
+    key.startsWith("docs/")
+  ) {
+    const mediaBase = (env.R2_MEDIA_PUBLIC_URL || env.R2_PUBLIC_URL || "").replace(/\/+$/, "");
+    if (mediaBase) return `${mediaBase}/${encoded}`;
+  } else if (key.startsWith("snapshots/") || key.startsWith("fallback/")) {
+    const snapBase = (env.R2_SNAPSHOTS_PUBLIC_URL || env.R2_PUBLIC_URL || "").replace(/\/+$/, "");
+    if (snapBase) return `${snapBase}/${encoded}`;
+  }
   const base = (env.R2_PUBLIC_URL || "").replace(/\/+$/, "");
   return base ? `${base}/${encoded}` : `${origin}/api/files/${encoded}`;
 }

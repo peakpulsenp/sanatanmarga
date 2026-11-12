@@ -1,5 +1,5 @@
 import type { Env } from "./types";
-import { todayUtc, safeKey } from "./util";
+import { todayUtc, safeKey, getSnapshotBucket } from "./util";
 
 export interface SyncResult {
   success: boolean;
@@ -128,7 +128,8 @@ export async function handleScheduledSync(env: Env): Promise<SyncResult> {
   }
 
   // 2. Read pending journal operations from Cloudflare R2
-  const listed = await env.BUCKET.list({ prefix: "journal/pending/", limit: 100 });
+  const bucket = getSnapshotBucket(env);
+  const listed = await bucket.list({ prefix: "journal/pending/", limit: 100 });
   if (!listed.objects.length) {
     return { success: true, attempted: 0, replayed: 0, failed: 0, quotaAvailable: true };
   }
@@ -139,7 +140,7 @@ export async function handleScheduledSync(env: Env): Promise<SyncResult> {
 
   for (const objMeta of listed.objects) {
     try {
-      const obj = await env.BUCKET.get(objMeta.key);
+      const obj = await bucket.get(objMeta.key);
       if (!obj) continue;
 
       const record: any = await obj.json();
@@ -148,14 +149,14 @@ export async function handleScheduledSync(env: Env): Promise<SyncResult> {
       if (ok) {
         // Move to applied
         const appliedKey = `journal/applied/${objMeta.key.split("/").pop()}`;
-        await env.BUCKET.put(appliedKey, JSON.stringify(record), {
+        await bucket.put(appliedKey, JSON.stringify(record), {
           httpMetadata: { contentType: "application/json" },
           customMetadata: { replayedAt: new Date().toISOString(), syncedBy: "worker_cron" },
         });
-        await env.BUCKET.delete(objMeta.key);
+        await bucket.delete(objMeta.key);
 
         if (record.opId) {
-          await env.BUCKET.delete(`journal/index/${record.opId}.json`).catch(() => {});
+          await bucket.delete(`journal/index/${record.opId}.json`).catch(() => {});
         }
 
         if (record.path) {
@@ -178,7 +179,7 @@ export async function handleScheduledSync(env: Env): Promise<SyncResult> {
   const today = todayUtc();
   const logKey = `system/sync-logs/${today}.json`;
   try {
-    const existingObj = await env.BUCKET.get(logKey);
+    const existingObj = await bucket.get(logKey);
     const existingLogs: any[] = existingObj ? (await existingObj.json() as any[]) : [];
     existingLogs.push({
       timestamp: new Date().toISOString(),
@@ -186,7 +187,7 @@ export async function handleScheduledSync(env: Env): Promise<SyncResult> {
       failed,
       pendingRemaining: listed.objects.length - replayed,
     });
-    await env.BUCKET.put(logKey, JSON.stringify(existingLogs.slice(-50)), {
+    await bucket.put(logKey, JSON.stringify(existingLogs.slice(-50)), {
       httpMetadata: { contentType: "application/json" },
     });
   } catch {}

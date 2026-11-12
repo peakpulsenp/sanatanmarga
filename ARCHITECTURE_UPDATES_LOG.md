@@ -239,5 +239,22 @@ Worker फोल्डर: `server/worker/`
   - वातावरण भेरिएबल: `NODE_VERSION=20`
   - SPA Rewrite Rule: `/* -> /index.html` (React Router का सबै १६०+ रूटहरूलाई ४०४ त्रुटिरहित लोड गर्न)।
 
+### [2026-11-12] - संस्करण ५.४.०: Cloudflare R2 दुई बकेट वास्तुकला (Marketplace-media & sanatanmarga-snapshots)
+- **बकेट पृथकीकरण (Dedicated Dual-Bucket Architecture)**:
+  - `Marketplace-media`: सबै बाइनरी मिडिया फाइलहरूका लागि समर्पित (`images/`, `audio/`, `videos/`, `documents/`, `media/`)।
+  - `sanatanmarga-snapshots`: सबै JSON स्न्यापसट, सिस्टम डेटा, र फलब्याक जर्नलका लागि समर्पित (`snapshots/`, `journal/`, `certificates/`, `orders/`)।
+- **Cloudflare Worker बाइन्डिङ अद्यावधिक (`server/worker/wrangler.toml`)**:
+  - `[[r2_buckets]] binding = "MEDIA_BUCKET", bucket_name = "Marketplace-media"`
+  - `[[r2_buckets]] binding = "SNAPSHOT_BUCKET", bucket_name = "sanatanmarga-snapshots"`
+  - `[[r2_buckets]] binding = "BUCKET", bucket_name = "sanatanmarga-snapshots"` (पश्चगामी अनुकूलताका लागि)
+- **स्वचालित मिडिया फोल्डर वर्गीकरण (`buildMediaObjectKey`)**:
+  - फाइलको MIME प्रकार अनुसार स्वतः उपयुक्त फोल्डरमा राख्ने प्रणाली:
+    - `images/`: JPG, PNG, WEBP, SVG फोटो तथा ब्यानरहरू
+    - `audio/`: MP3, WAV, TTS अडियो, रेडियो तथा पोडकास्टहरू
+    - `videos/`: MP4, WEBM भिडियोहरू
+    - `documents/`: PDF, DOC, ग्रन्थ, ई-कागज तथा पाण्डुलिपिहरू
+- **फ्रन्टइन्ड तथा ब्याकइन्ड URL रूटिङ**:
+  - `src/lib/backendConfig.ts` मा `r2MediaPublicUrl` र `r2SnapshotsPublicUrl` थप गरी मिडिया र स्न्यापसटहरू आ-आफ्नो बकेट वा कस्टम CDN डोमेनबाट स्वचालित लोड हुने बनाइयो।
+
 ---
 *सनातन मार्ग इन्जिनियरिङ टोलीद्वारा सुरक्षित र प्रमाणित।*

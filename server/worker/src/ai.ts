@@ -1,6 +1,6 @@
 import type { Env, RouteContext } from "./types";
 import { HttpError, clientIp, json } from "./http";
-import { sha256Hex, todayUtc, base64FromBytes, bytesFromBase64 } from "./util";
+import { sha256Hex, todayUtc, base64FromBytes, bytesFromBase64, getSnapshotBucket } from "./util";
 
 // In-memory sliding window rate limiting
 const ipWindows = new Map<string, { count: number; resetAt: number }>();
@@ -34,7 +34,8 @@ export async function checkDailyQuota(env: Env, ctx: ExecutionContext): Promise<
   const key = `system/ai-usage/${today}.json`;
 
   try {
-    const obj = await env.BUCKET.get(key);
+    const bucket = getSnapshotBucket(env);
+    const obj = await bucket.get(key);
     let count = 0;
     if (obj) {
       const data = (await obj.json()) as { count?: number };
@@ -53,7 +54,7 @@ export async function checkDailyQuota(env: Env, ctx: ExecutionContext): Promise<
     ctx.waitUntil(
       (async () => {
         try {
-          await env.BUCKET.put(key, JSON.stringify({ count: count + 1, date: today }), {
+          await bucket.put(key, JSON.stringify({ count: count + 1, date: today }), {
             httpMetadata: { contentType: "application/json" },
           });
         } catch {}

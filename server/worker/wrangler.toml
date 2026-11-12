@@ -2,10 +2,20 @@ name = "sanatanmarga-api"
 main = "src/index.ts"
 compatibility_date = "2025-01-01"
 
-# Cloudflare R2 Bucket Binding (Storage & Snapshots)
+# 1. Cloudflare R2 Snapshots Bucket (Static snapshots, fast edge cache, fallback journal)
+[[r2_buckets]]
+binding = "SNAPSHOT_BUCKET"
+bucket_name = "sanatanmarga-snapshots"
+
+# 2. Cloudflare R2 Media Bucket (Images, audio, video, documents, uploads)
+[[r2_buckets]]
+binding = "MEDIA_BUCKET"
+bucket_name = "Marketplace-media"
+
+# Backward compatibility / fallback binding
 [[r2_buckets]]
 binding = "BUCKET"
-bucket_name = "sanatanmarga-assets"
+bucket_name = "sanatanmarga-snapshots"
 
 # Scheduled Cron Trigger for Auto-Sync of R2 Journal to Firebase
 [triggers]
@@ -20,8 +30,10 @@ crons = ["*/5 * * * *"]
 # Allowed origins for CORS (comma-separated, or * for open access)
 ALLOWED_ORIGINS = "*"
 
-# Public R2 bucket CDN URL or custom domain (e.g. https://assets.sanatanmarga.com)
+# Public R2 URLs or custom domains
 R2_PUBLIC_URL = ""
+R2_SNAPSHOTS_PUBLIC_URL = ""
+R2_MEDIA_PUBLIC_URL = ""
 
 # Firebase Project ID for Google RS256 token verification
 FIREBASE_PROJECT_ID = "pod-studio-saas"

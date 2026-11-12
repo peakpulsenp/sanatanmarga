@@ -1,10 +1,14 @@
 export interface Env {
-  BUCKET: R2Bucket;
+  BUCKET?: R2Bucket;
+  SNAPSHOT_BUCKET?: R2Bucket;
+  MEDIA_BUCKET?: R2Bucket;
   RATE_KV?: KVNamespace;
 
   // [vars]
   ALLOWED_ORIGINS?: string;
   R2_PUBLIC_URL?: string;
+  R2_SNAPSHOTS_PUBLIC_URL?: string;
+  R2_MEDIA_PUBLIC_URL?: string;
   FIREBASE_PROJECT_ID?: string;
   GEMINI_MODEL?: string;
   GEMINI_TTS_MODEL?: string;

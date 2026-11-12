@@ -17,6 +17,9 @@ import {
   MIME_ALLOWED,
   MAX_MEDIA_BYTES,
   base64FromBytes,
+  getSnapshotBucket,
+  getMediaBucket,
+  buildMediaObjectKey,
 } from "./util";
 import {
   checkIpRateLimit,
@@ -33,13 +36,19 @@ export function createRouter(): Router {
    * 1. Health & Diagnostics
    * ============================================================ */
   const healthHandler = async ({ env }: RouteContext) => {
-    let r2Healthy = false;
+    let snapshotR2Healthy = false;
+    let mediaR2Healthy = false;
     try {
-      await env.BUCKET.head("system/health-probe");
-      r2Healthy = true;
+      await getSnapshotBucket(env).head("system/health-probe");
+      snapshotR2Healthy = true;
     } catch {
-      // head might fail if file doesn't exist, but bucket works
-      r2Healthy = true;
+      snapshotR2Healthy = true;
+    }
+    try {
+      await getMediaBucket(env).head("system/health-probe");
+      mediaR2Healthy = true;
+    } catch {
+      mediaR2Healthy = true;
     }
 
     const aiConfigured = Boolean(env.GEMINI_API_KEY);
@@ -47,9 +56,11 @@ export function createRouter(): Router {
 
     return json({
       success: true,
-      status: r2Healthy && aiConfigured ? "healthy" : "degraded",
+      status: snapshotR2Healthy && mediaR2Healthy && aiConfigured ? "healthy" : "degraded",
       services: {
-        r2: r2Healthy,
+        r2Snapshots: snapshotR2Healthy,
+        r2Media: mediaR2Healthy,
+        r2: snapshotR2Healthy && mediaR2Healthy,
         ai: aiConfigured,
         auth: authConfigured,
       },
@@ -85,9 +96,10 @@ export function createRouter(): Router {
       candidates.push(`snapshots/${cleanRest}`);
     }
 
+    const snapBucket = getSnapshotBucket(env);
     for (const cand of candidates) {
       if (!safeKey(cand)) continue;
-      const obj = await env.BUCKET.get(cand);
+      const obj = await snapBucket.get(cand);
       if (obj) {
         const etag = obj.httpEtag;
         const ifNoneMatch = req.headers.get("If-None-Match");
@@ -108,7 +120,8 @@ export function createRouter(): Router {
   });
 
   router.get("/api/snapshots/manifest", async ({ env }: RouteContext) => {
-    const obj = await env.BUCKET.get("snapshots/manifest.json");
+    const snapBucket = getSnapshotBucket(env);
+    const obj = await snapBucket.get("snapshots/manifest.json");
     if (obj) {
       return new Response(obj.body, {
         headers: { "Content-Type": "application/json; charset=utf-8" },
@@ -131,6 +144,7 @@ export function createRouter(): Router {
       throw new HttpError(400, "no_items_provided");
     }
 
+    const snapBucket = getSnapshotBucket(env);
     const written: string[] = [];
     for (const item of items) {
       const key = safeKey(item.key.replace(/^\/+/, ""));
@@ -142,7 +156,7 @@ export function createRouter(): Router {
       const jsonStr = JSON.stringify(item.data);
       const sha256 = await sha256Hex(jsonStr);
 
-      await env.BUCKET.put(fullKey, jsonStr, {
+      await snapBucket.put(fullKey, jsonStr, {
         httpMetadata: { contentType: "application/json; charset=utf-8" },
         customMetadata: { sha256, updatedAt: new Date().toISOString() },
       });
@@ -163,11 +177,12 @@ export function createRouter(): Router {
     const id = sanitizeFileName(body.id || "");
     if (!id) throw new HttpError(400, "missing_document_id");
 
+    const snapBucket = getSnapshotBucket(env);
     const written: string[] = [];
     if (body.isDelete) {
-      await env.BUCKET.delete(`snapshots/${col}/${id}.json`);
+      await snapBucket.delete(`snapshots/${col}/${id}.json`);
       if (col === "articles") {
-        await env.BUCKET.delete(`snapshots/article_${id}.json`);
+        await snapBucket.delete(`snapshots/article_${id}.json`);
       }
       written.push(`deleted:${col}/${id}`);
     } else {
@@ -178,18 +193,18 @@ export function createRouter(): Router {
         customMetadata: { sha256, updatedAt: new Date().toISOString() },
       };
 
-      await env.BUCKET.put(`snapshots/${col}/${id}.json`, dataStr, metadata);
+      await snapBucket.put(`snapshots/${col}/${id}.json`, dataStr, metadata);
       written.push(`snapshots/${col}/${id}.json`);
 
       if (col === "articles") {
-        await env.BUCKET.put(`snapshots/article_${id}.json`, dataStr, metadata);
+        await snapBucket.put(`snapshots/article_${id}.json`, dataStr, metadata);
         written.push(`snapshots/article_${id}.json`);
       } else if (col === "events") {
-        await env.BUCKET.put(`snapshots/event_${id}.json`, dataStr, metadata);
+        await snapBucket.put(`snapshots/event_${id}.json`, dataStr, metadata);
         written.push(`snapshots/event_${id}.json`);
       } else if (col === "settings" && id === "homepage") {
         try {
-          const homeObj = await env.BUCKET.get("snapshots/homepage.json");
+          const homeObj = await snapBucket.get("snapshots/homepage.json");
           if (homeObj) {
             const homeData = (await homeObj.json()) as any;
             if (body.data.hero) homeData.hero = body.data.hero;
@@ -199,7 +214,7 @@ export function createRouter(): Router {
             homeData.updatedAt = new Date().toISOString();
             const homeStr = JSON.stringify(homeData);
             const homeSha = await sha256Hex(homeStr);
-            await env.BUCKET.put("snapshots/homepage.json", homeStr, {
+            await snapBucket.put("snapshots/homepage.json", homeStr, {
               httpMetadata: { contentType: "application/json; charset=utf-8" },
               customMetadata: { sha256: homeSha, updatedAt: new Date().toISOString() },
             });
@@ -263,10 +278,11 @@ export function createRouter(): Router {
         receivedAt,
       };
 
-      await env.BUCKET.put(pendingKey, JSON.stringify(record), {
+      const snapBucket = getSnapshotBucket(env);
+      await snapBucket.put(pendingKey, JSON.stringify(record), {
         httpMetadata: { contentType: "application/json" },
       });
-      await env.BUCKET.put(indexKey, pendingKey, {
+      await snapBucket.put(indexKey, pendingKey, {
         httpMetadata: { contentType: "text/plain" },
       });
 
@@ -280,25 +296,26 @@ export function createRouter(): Router {
     const body = await readJson<{ opIds: string[] }>(req);
     if (!Array.isArray(body.opIds)) throw new HttpError(400, "opIds_required");
 
+    const snapBucket = getSnapshotBucket(env);
     let settled = 0;
     for (const opId of body.opIds.slice(0, 200)) {
       const cleanOpId = opId.replace(/[^a-zA-Z0-9_-]/g, "");
       const indexKey = `journal/index/${cleanOpId}.json`;
-      const indexObj = await env.BUCKET.get(indexKey);
+      const indexObj = await snapBucket.get(indexKey);
       if (!indexObj) continue;
 
       const pendingKey = await indexObj.text();
-      const pendingObj = await env.BUCKET.get(pendingKey);
+      const pendingObj = await snapBucket.get(pendingKey);
       if (pendingObj) {
         const data = await pendingObj.text();
         const appliedKey = `journal/applied/${pendingKey.split("/").pop()}`;
-        await env.BUCKET.put(appliedKey, data, {
+        await snapBucket.put(appliedKey, data, {
           httpMetadata: { contentType: "application/json" },
           customMetadata: { settledBy: "client", settledAt: new Date().toISOString() },
         });
-        await env.BUCKET.delete(pendingKey);
+        await snapBucket.delete(pendingKey);
       }
-      await env.BUCKET.delete(indexKey);
+      await snapBucket.delete(indexKey);
       settled += 1;
     }
 
@@ -306,7 +323,8 @@ export function createRouter(): Router {
   });
 
   router.get("/api/fallback/status", async ({ env }: RouteContext) => {
-    const listed = await env.BUCKET.list({ prefix: "journal/pending/", limit: 500 });
+    const snapBucket = getSnapshotBucket(env);
+    const listed = await snapBucket.list({ prefix: "journal/pending/", limit: 500 });
     return json({ success: true, pendingCount: listed.objects.length });
   });
 
@@ -325,7 +343,8 @@ export function createRouter(): Router {
     return json({
       success: true,
       provider: "r2",
-      publicUrl: env.R2_PUBLIC_URL || null,
+      publicUrl: env.R2_MEDIA_PUBLIC_URL || env.R2_PUBLIC_URL || null,
+      snapshotsUrl: env.R2_SNAPSHOTS_PUBLIC_URL || env.R2_PUBLIC_URL || null,
       maxBytes: MAX_MEDIA_BYTES,
     });
   });
@@ -342,12 +361,12 @@ export function createRouter(): Router {
       throw new HttpError(413, "file_exceeds_max_allowed_size");
     }
 
-    const tenantId = sanitizeSegment(body.tenantId, "default");
-    const category = sanitizeSegment(body.category, "general");
-    const now = new Date();
-    const yyyy = now.getUTCFullYear();
-    const mm = String(now.getUTCMonth() + 1).padStart(2, "0");
-    const objectKey = `media/${tenantId}/${category}/${yyyy}/${mm}/${uuid()}-${fileName}`;
+    const objectKey = buildMediaObjectKey(
+      body.category || "general",
+      fileName,
+      mimeType,
+      body.tenantId || "default"
+    );
 
     const exp = Math.floor(Date.now() / 1000) + 900; // 15 min expiry
     const secret = env.UPLOAD_SIGNING_SECRET || env.ADMIN_API_TOKEN || env.GEMINI_API_KEY || "default_signing_secret";
@@ -388,7 +407,8 @@ export function createRouter(): Router {
     const body = req.body;
     if (!body) throw new HttpError(400, "missing_upload_body");
 
-    await env.BUCKET.put(objectKey, body, {
+    const mediaBucket = getMediaBucket(env);
+    await mediaBucket.put(objectKey, body, {
       httpMetadata: { contentType },
     });
 
@@ -425,7 +445,8 @@ export function createRouter(): Router {
       createdAt: new Date().toISOString(),
     };
 
-    await env.BUCKET.put(`media-index/${assetId}.json`, JSON.stringify(asset), {
+    const mediaBucket = getMediaBucket(env);
+    await mediaBucket.put(`media-index/${assetId}.json`, JSON.stringify(asset), {
       httpMetadata: { contentType: "application/json" },
     });
 
@@ -445,14 +466,12 @@ export function createRouter(): Router {
     const fileName = sanitizeFileName((file as File).name || "upload");
     const mimeType = blob.type || "application/octet-stream";
 
-    const tenantId = sanitizeSegment(formData.get("tenantId") as string, "default");
-    const category = sanitizeSegment(formData.get("category") as string, "general");
-    const now = new Date();
-    const yyyy = now.getUTCFullYear();
-    const mm = String(now.getUTCMonth() + 1).padStart(2, "0");
-    const objectKey = `media/${tenantId}/${category}/${yyyy}/${mm}/${uuid()}-${fileName}`;
+    const tenantId = (formData.get("tenantId") as string) || "default";
+    const category = (formData.get("category") as string) || "general";
+    const objectKey = buildMediaObjectKey(category, fileName, mimeType, tenantId);
 
-    await env.BUCKET.put(objectKey, blob.stream(), {
+    const mediaBucket = getMediaBucket(env);
+    await mediaBucket.put(objectKey, blob.stream(), {
       httpMetadata: { contentType: mimeType },
     });
 
@@ -466,8 +485,8 @@ export function createRouter(): Router {
 
     const asset = {
       id: assetId,
-      tenantId,
-      category,
+      tenantId: sanitizeSegment(tenantId, "default"),
+      category: sanitizeSegment(category, "general"),
       fileName,
       originalName: fileName,
       url: publicUrl,
@@ -492,7 +511,33 @@ export function createRouter(): Router {
     const rawKey = params.key || "";
     const cleanKey = safeKey(decodePathKey(rawKey));
 
-    const obj = await env.BUCKET.get(cleanKey);
+    // If snapshot, journal, or certificate, check snapshot bucket first
+    if (
+      cleanKey.startsWith("snapshots/") ||
+      cleanKey.startsWith("journal/") ||
+      cleanKey.startsWith("fallback/") ||
+      cleanKey.startsWith("certificates/") ||
+      cleanKey.startsWith("orders/")
+    ) {
+      const snapBucket = getSnapshotBucket(env);
+      const snapObj = await snapBucket.get(cleanKey);
+      if (snapObj) {
+        const headers = new Headers();
+        snapObj.writeHttpMetadata(headers);
+        headers.set("Cache-Control", "public, max-age=60, stale-while-revalidate=600");
+        return new Response(snapObj.body, { headers });
+      }
+    }
+
+    // Media bucket (Marketplace-media)
+    const mediaBucket = getMediaBucket(env);
+    let obj = await mediaBucket.get(cleanKey);
+    if (!obj) {
+      // Fallback to snapshot bucket if not found in media bucket
+      const snapBucket = getSnapshotBucket(env);
+      obj = await snapBucket.get(cleanKey);
+    }
+
     if (!obj) {
       return errorResponse(404, "file_not_found");
     }
@@ -595,10 +640,11 @@ Instructions:
 
     const voice = str(body.voice, 30) || "Kore";
     const cacheHash = await sha256Hex(`${voice}|${text}`);
-    const cacheKey = `tts/${cacheHash}.wav`;
+    const cacheKey = `audio/tts/${cacheHash}.wav`;
 
+    const mediaBucket = getMediaBucket(env);
     // Check R2 cache
-    const existing = await env.BUCKET.head(cacheKey);
+    const existing = await mediaBucket.head(cacheKey);
     const publicUrl = publicUrlFor(env, url.origin, cacheKey);
     if (existing) {
       return json({
@@ -612,7 +658,7 @@ Instructions:
     const { audioWavBytes } = await callGeminiTts(env, text, voice);
 
     // Save to R2 cache
-    await env.BUCKET.put(cacheKey, audioWavBytes, {
+    await mediaBucket.put(cacheKey, audioWavBytes, {
       httpMetadata: { contentType: "audio/wav" },
     });
 
@@ -677,7 +723,8 @@ Instructions:
     const checksum = await sha256Hex(canonicalJson(record));
     const fullRecord = { ...record, checksum };
 
-    await env.BUCKET.put(`certificates/${uniqueId}.json`, JSON.stringify(fullRecord), {
+    const snapBucket = getSnapshotBucket(env);
+    await snapBucket.put(`certificates/${uniqueId}.json`, JSON.stringify(fullRecord), {
       httpMetadata: { contentType: "application/json" },
     });
 
@@ -686,7 +733,8 @@ Instructions:
 
   router.get("/api/certificates/verify/:id", async ({ env, params }: RouteContext) => {
     const id = safeKey(params.id || "").replace(/\.json$/, "");
-    const obj = await env.BUCKET.get(`certificates/${id}.json`);
+    const snapBucket = getSnapshotBucket(env);
+    const obj = await snapBucket.get(`certificates/${id}.json`);
 
     if (!obj) {
       return errorResponse(404, "प्रमाणपत्र फेला परेन वा अमान्य छ।");
@@ -713,7 +761,8 @@ Instructions:
    * 7. Sanatan Store & Orders
    * ============================================================ */
   router.get("/api/store/products", async ({ env }: RouteContext) => {
-    const obj = await env.BUCKET.get("snapshots/collections/products.json");
+    const snapBucket = getSnapshotBucket(env);
+    const obj = await snapBucket.get("snapshots/collections/products.json");
     if (obj) {
       const data: any = await obj.json();
       const list = Array.isArray(data) ? data : data?.items || [];
@@ -753,12 +802,13 @@ Instructions:
       createdAt: now.toISOString(),
     };
 
-    await env.BUCKET.put(`orders/${orderId}.json`, JSON.stringify(order), {
+    const snapBucket = getSnapshotBucket(env);
+    await snapBucket.put(`orders/${orderId}.json`, JSON.stringify(order), {
       httpMetadata: { contentType: "application/json" },
     });
 
     // Also journal write for background Firestore replication
-    await env.BUCKET.put(
+    await snapBucket.put(
       `journal/pending/${now.getTime()}_${orderId}.json`,
       JSON.stringify({
         opId: orderId,
@@ -782,24 +832,27 @@ Instructions:
   });
 
   router.get("/api/live-data", async ({ env }: RouteContext) => {
-    const obj = await env.BUCKET.get("snapshots/live.json");
+    const snapBucket = getSnapshotBucket(env);
+    const obj = await snapBucket.get("snapshots/live.json");
     if (obj) return new Response(obj.body, { headers: { "Content-Type": "application/json" } });
     return json({ success: true, data: null });
   });
 
   router.get("/api/radio-data", async ({ env }: RouteContext) => {
-    const obj = await env.BUCKET.get("snapshots/radio.json");
+    const snapBucket = getSnapshotBucket(env);
+    const obj = await snapBucket.get("snapshots/radio.json");
     if (obj) return new Response(obj.body, { headers: { "Content-Type": "application/json" } });
     return json({ success: true, data: null });
   });
 
   const telemetryBatchHandler = async ({ env, req, ctx }: RouteContext) => {
     const text = await readText(req, 256 * 1024);
+    const snapBucket = getSnapshotBucket(env);
     ctx.waitUntil(
       (async () => {
         try {
           const key = `analytics/${todayUtc()}/${uuid()}.json`;
-          await env.BUCKET.put(key, text, {
+          await snapBucket.put(key, text, {
             httpMetadata: { contentType: "application/json" },
           });
         } catch {}
@@ -821,8 +874,9 @@ Instructions:
   router.get("/api/admin/command-center", async ({ env, req }: RouteContext) => {
     await requireAdmin(req, env);
 
-    const pendingListed = await env.BUCKET.list({ prefix: "journal/pending/", limit: 100 });
-    const usageObj = await env.BUCKET.get(`system/ai-usage/${todayUtc()}.json`);
+    const snapBucket = getSnapshotBucket(env);
+    const pendingListed = await snapBucket.list({ prefix: "journal/pending/", limit: 100 });
+    const usageObj = await snapBucket.get(`system/ai-usage/${todayUtc()}.json`);
     let aiUsageCount = 0;
     if (usageObj) {
       const u: any = await usageObj.json();

@@ -31,6 +31,10 @@ export interface BackendConfig {
   apiBaseUrl: string;
   /** Public R2 bucket URL / custom domain for media and snapshots. */
   r2PublicUrl: string;
+  /** Public R2 bucket URL for Marketplace-media bucket. */
+  r2MediaPublicUrl: string;
+  /** Public R2 bucket URL for sanatanmarga-snapshots bucket. */
+  r2SnapshotsPublicUrl: string;
   /** True when an API gateway is expected to answer `/api/*`. */
   hasApiGateway: boolean;
   /** How long to stay on the fallback path after a Firestore quota error. */
@@ -121,6 +125,8 @@ export const backendConfig: BackendConfig = Object.freeze({
   firebase: mode === "firebase" ? firebase : null,
   apiBaseUrl,
   r2PublicUrl: sanitizeBase(str("VITE_R2_PUBLIC_URL")) || sanitizeBase(str("VITE_R2_CUSTOM_DOMAIN")),
+  r2MediaPublicUrl: sanitizeBase(str("VITE_R2_MEDIA_PUBLIC_URL")),
+  r2SnapshotsPublicUrl: sanitizeBase(str("VITE_R2_SNAPSHOTS_PUBLIC_URL")),
   // In firebase mode a gateway is mandatory (AI, media, certificates, journal).
   hasApiGateway: Boolean(apiBaseUrl) || mode === "firebase" || bool("VITE_SAME_ORIGIN_API", false),
   fallbackCooldownMs: num("VITE_FIRESTORE_FALLBACK_COOLDOWN_MS", 10 * 60 * 1000),
@@ -143,6 +149,20 @@ export function apiUrl(path: string): string {
 /** Public URL for an R2 object key (falls back to the gateway file proxy). */
 export function r2ObjectUrl(key: string): string {
   const clean = key.replace(/^\/+/, "");
+  if (
+    clean.startsWith("media/") ||
+    clean.startsWith("images/") ||
+    clean.startsWith("audio/") ||
+    clean.startsWith("videos/") ||
+    clean.startsWith("documents/") ||
+    clean.startsWith("docs/")
+  ) {
+    const base = backendConfig.r2MediaPublicUrl || backendConfig.r2PublicUrl;
+    if (base) return `${base}/${clean}`;
+  } else if (clean.startsWith("snapshots/") || clean.startsWith("journal/") || clean.startsWith("fallback/")) {
+    const base = backendConfig.r2SnapshotsPublicUrl || backendConfig.r2PublicUrl;
+    if (base) return `${base}/${clean}`;
+  }
   if (backendConfig.r2PublicUrl) return `${backendConfig.r2PublicUrl}/${clean}`;
   return apiUrl(`/api/files/${clean}`);
 }
