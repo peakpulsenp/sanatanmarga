@@ -225,5 +225,19 @@ Worker फोल्डर: `server/worker/`
   - गृहपृष्ठमा `BreakingNewsStrip` सक्रिय गरियो जसले एडमिनले पिन गरेका ब्रेकिङ हेडलाइनहरू (`pinnedBreakingHeadlines`) वास्तविक समयमा प्रदर्शन गर्दछ।
   - `layoutConfig` का सबै टगलहरू (`hero`, `breakingNews`, `categoryGrid`, `featuredStories`, `districtIntelligence`, `knowledgeOS`, `communityOnboarding`) लाई गृहपृष्ठका सेक्सनहरूसँग प्रत्यक्ष जोडिएको छ।
 
+### [2026-11-12] - संस्करण ५.३.०: GitHub भण्डार निर्माण तथा Render डिप्लोयमेन्ट कन्फिगरेसन
+- **GitHub Repository सिर्जना तथा पुश**:
+  - आधिकारिक रिपोजिटरी: `https://github.com/peakpulsenp/sanatanmarga`
+  - ब्रान्च: `main`
+  - प्रारम्भिक कमिट: `6fa078b` (कुल १३०६ स्रोत फाइलहरू सुरक्षित र सफा अवस्थामा कमिट गरियो)।
+  - `.gitignore` ले `node_modules/`, `dist/`, `.wrangler/`, र `.env*` जस्ता संवेदनशील तथा निर्माण फाइलहरूलाई बाइपास गरेको छ।
+- **Render Static Site Blueprint (`render.yaml`)**:
+  - रनटाइम: `static`
+  - नाम: `sanatanmarga`
+  - Build Command: `npm install && npm run build`
+  - Static Publish Path: `./dist`
+  - वातावरण भेरिएबल: `NODE_VERSION=20`
+  - SPA Rewrite Rule: `/* -> /index.html` (React Router का सबै १६०+ रूटहरूलाई ४०४ त्रुटिरहित लोड गर्न)।
+
 ---
 *सनातन मार्ग इन्जिनियरिङ टोलीद्वारा सुरक्षित र प्रमाणित।*
